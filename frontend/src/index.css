@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Leaflet fixes */
+.leaflet-container { width: 100%; height: 100%; z-index: 0; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* Smooth transitions */
+* { transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
+
+/* Glass effect utility */
+.glass {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #22c55e, #4ade80, #86efac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulse animation for live tracking */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+.live-pulse { animation: livePulse 2s ease-in-out infinite; }
+
+/* Status badge colors */
+.badge-pending   { @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30; }
+.badge-accepted  { @apply bg-blue-500/20 text-blue-400 border border-blue-500/30; }
+.badge-picked    { @apply bg-purple-500/20 text-purple-400 border border-purple-500/30; }
+.badge-in_transit { @apply bg-orange-500/20 text-orange-400 border border-orange-500/30; }
+.badge-delivered { @apply bg-green-500/20 text-green-400 border border-green-500/30; }
+.badge-active    { @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30; }
+.badge-fulfilled { @apply bg-slate-500/20 text-slate-400 border border-slate-500/30; }
