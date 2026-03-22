@@ -8,9 +8,7 @@ ShareBite is a real-time MERN (MongoDB, Express, React, Node.js) stack applicati
 - **Live Delivery Tracking**: Real-time location updates for volunteers during pickup and delivery using **Socket.io**.
 - **Self-Service Matching**: NGOs can "match" with nearby available donations directly without waiting for manual intervention.
 - **Volunteer Pickup flow**: Volunteers can view pending donations in their vicinity and claim them for delivery.
-
 ---
-
 ## 🏗️ System Architecture
 
 ### 1. Backend (Express & Node.js)
@@ -29,11 +27,8 @@ A modern, responsive SPA (Single Page Application) built with React and styled w
 - **Context API**: `AuthContext` manages user sessions and global authentication state.
 - **Interactive Maps**: Uses **Leaflet.js** for visualizing donations, requests, and volunteer movement (not shown in files but used in logic).
 - **Communication**: Interacts with the backend via Axios/Fetch and maintains a persistent Socket connection for live updates.
-
 ---
-
 ## 🔁 The ShareBite Workflow
-
 ### Step 1: Donation Creation (Donor)
 A **Donor** logs in and posts a donation. They provide details like item names, quantity, expiry time, and their current location (auto-detected or manually set).
 - **Backend**: Saves a `Donation` document with `status: 'pending'`.
