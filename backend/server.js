@@ -27,7 +27,14 @@ const server = http.createServer(app);
 
 // Socket.io
 const io = new Server(server, {
-  cors: { origin: "*", methods: ['GET', 'POST', 'PATCH'], credentials: true }
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "https://sharebite-sigma.vercel.app"
+    ],
+    methods: ['GET', 'POST', 'PATCH'],
+    credentials: true
+  }
 });
 app.set('io', io);
 initSocket(io);
@@ -70,7 +77,10 @@ if (process.env.NODE_ENV === 'development') {
 
 // Middleware
 app.use(cors({
-  origin: "*",
+  origin: [
+    "http://localhost:5173",
+    "https://sharebite-sigma.vercel.app"
+  ],
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
