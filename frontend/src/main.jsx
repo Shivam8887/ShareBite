@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Toaster } from 'react-hot-toast';
 import ErrorBoundary from './components/ErrorBoundary';
 import App from './App.jsx';
@@ -14,18 +15,20 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <HelmetProvider>
           <AuthProvider>
-            <App />
-            <Toaster
-              position="top-right"
-              toastOptions={{
-                duration: 3000,
-                style: {
-                  background: '#1e293b',
-                  color: '#f1f5f9',
-                  border: '1px solid rgba(148, 163, 184, 0.15)',
-                },
-              }}
-            />
+            <ThemeProvider>
+              <App />
+              <Toaster
+                position="top-right"
+                toastOptions={{
+                  duration: 3000,
+                  style: {
+                    background: 'rgb(var(--color-dark-800))',
+                    color: 'rgb(var(--color-dark-100))',
+                    border: '1px solid rgb(var(--color-glass-border) / 0.15)',
+                  },
+                }}
+              />
+            </ThemeProvider>
           </AuthProvider>
         </HelmetProvider>
       </BrowserRouter>

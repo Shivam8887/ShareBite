@@ -237,7 +237,7 @@ export default function VolunteerDashboard() {
             </div>
 
             {/* Right Col: Route Map */}
-            <div className="lg:col-span-3 h-[400px] lg:h-auto rounded-xl overflow-hidden border border-dark-700/50 relative bg-dark-800">
+            <div className="lg:col-span-3 h-[400px] lg:min-h-[400px] rounded-xl overflow-hidden border border-dark-700/50 relative bg-dark-800">
               {activeDelivery.donationId?.pickupLocation?.coordinates ? (
                 <RouteMap
                   pickup={{

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { X } from 'lucide-react';
 
 const NAV_ITEMS = {
   donor: [
@@ -23,7 +24,7 @@ const NAV_ITEMS = {
   ],
 };
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setIsOpen }) {
   const { user } = useAuth();
   const items = NAV_ITEMS[user?.role] || [];
 
@@ -37,7 +38,16 @@ export default function Sidebar() {
   const roleEmoji = { donor: '🍲', ngo: '🏢', volunteer: '🚴', admin: '🛡️' };
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-dark-900/80 backdrop-blur-xl border-r border-dark-700/50 flex flex-col z-30">
+    <aside className={`fixed left-0 top-0 h-screen w-64 bg-dark-900/95 backdrop-blur-xl border-r border-dark-700/50 flex flex-col z-30 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
+      
+      {/* Mobile Close Button */}
+      <button 
+        onClick={() => setIsOpen(false)}
+        className="md:hidden absolute top-4 right-4 p-1.5 text-dark-400 hover:text-white bg-dark-800 rounded-lg transition-colors border border-dark-700/50"
+      >
+        <X size={20} />
+      </button>
+
       {/* Brand */}
       <div className="px-6 py-5 border-b border-dark-700/50">
         <h1 className="text-2xl font-bold gradient-text">ShareBite</h1>
