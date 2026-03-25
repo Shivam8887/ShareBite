@@ -169,6 +169,9 @@ export default function MapView({
                   <b>Status:</b> <span style={{ textTransform: 'capitalize' }}>{d.status}</span><br/>
                   {donorInfo?.name && <><b>Contact:</b> {donorInfo.name}<br/></>}
                   {donorInfo?.phone && <><b>Phone:</b> {donorInfo.phone}<br/></>}
+                  {d.deliveryLocation && d.deliveryLocation.address && (
+                    <><b>Delivery:</b> {d.deliveryLocation.address}<br/></>
+                  )}
                   {userRole === 'volunteer' && d.status === 'pending' && onAcceptPickup && (
                     <button
                       onClick={() => onAcceptPickup(d._id)}
