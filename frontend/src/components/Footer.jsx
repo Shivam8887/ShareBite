@@ -1,8 +1,16 @@
 import React from 'react';
-import { Heart, Github, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Heart, Github, Twitter, Linkedin, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  // Reusable scroll-to-top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="bg-dark-900/80 border-t border-dark-800/50 pt-16 pb-8 relative overflow-hidden">
       {/* Background glow */}
@@ -12,7 +20,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Col */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2 group mb-6">
+            <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 group mb-6">
               <div className="p-2 bg-primary-500/10 rounded-xl">
                 <Heart className="w-6 h-6 text-primary-400" />
               </div>
@@ -40,11 +48,11 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><Link to="/about" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Contact Us</Link></li>
-              <li><Link to="/#how-it-works" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">How it Works</Link></li>
-              <li><Link to="/login" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Partner with Us</Link></li>
-              <li><Link to="/faq" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">FAQ</Link></li>
+              <li><Link to="/about" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">About Us</Link></li>
+              <li><Link to="/contact" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Contact Us</Link></li>
+              <li><Link to="/#how-it-works" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">How it Works</Link></li>
+              <li><Link to="/login" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Partner with Us</Link></li>
+              <li><Link to="/faq" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
@@ -52,10 +60,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-6">Legal</h3>
             <ul className="space-y-3">
-              <li><Link to="/privacy" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Terms of Service</Link></li>
-              <li><Link to="/guidelines" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Community Guidelines</Link></li>
-              <li><Link to="/cookie-policy" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Cookie Policy</Link></li>
+              <li><Link to="/privacy" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Terms of Service</Link></li>
+              <li><Link to="/guidelines" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Community Guidelines</Link></li>
+              <li><Link to="/cookie-policy" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Cookie Policy</Link></li>
             </ul>
           </div>
 
@@ -80,12 +88,24 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-dark-800/50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-dark-500 text-sm">
+        <div className="pt-8 border-t border-dark-800/50 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-dark-500 text-sm text-center md:text-left">
             © {new Date().getFullYear()} ShareBite. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-dark-500 text-sm">
-            Made with <Heart className="w-4 h-4 text-primary-500" /> for the community
+          
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-dark-500 text-sm">
+              Made with <Heart className="w-4 h-4 text-primary-500 mx-1" /> for the community
+            </div>
+            
+            {/* Scroll to Top Button */}
+            <button 
+              onClick={scrollToTop}
+              className="flex items-center justify-center p-2 rounded-full bg-dark-800/80 text-dark-400 hover:text-primary-400 hover:bg-dark-700 transition-all cursor-pointer group"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+            </button>
           </div>
         </div>
       </div>

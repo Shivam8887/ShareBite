@@ -21,6 +21,7 @@ const donationRoutes = require('./routes/donationRoutes');
 const requestRoutes = require('./routes/requestRoutes');
 const deliveryRoutes = require('./routes/deliveryRoutes');
 const mapRoutes = require('./routes/mapRoutes');
+const volunteerRoutes = require('./routes/volunteerRoutes');
 
 const app = express();
 const server = http.createServer(app);
@@ -102,6 +103,7 @@ app.use('/api/donations', donationRoutes);
 app.use('/api/requests', requestRoutes);
 app.use('/api/delivery', deliveryRoutes);
 app.use('/api/map', mapRoutes);
+app.use('/api/volunteer', volunteerRoutes);
 
 // Health check
 app.get('/api', (_req, res) => res.json({ status: 'ShareBite API running 🚀' }));

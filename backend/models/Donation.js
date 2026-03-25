@@ -9,7 +9,13 @@ const donationSchema = new mongoose.Schema({
   donorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   pickupLocation: {
     type: { type: String, enum: ['Point'], default: 'Point' },
-    coordinates: { type: [Number], required: true }    // [lng, lat]
+    coordinates: { type: [Number], required: true },   // [lng, lat]
+    address: { type: String, default: '' }
+  },
+  deliveryLocation: {
+    type: { type: String, enum: ['Point'], default: 'Point' },
+    coordinates: { type: [Number], default: [0, 0] },  // [lng, lat]
+    address: { type: String, default: '' }
   },
   status: {
     type: String,

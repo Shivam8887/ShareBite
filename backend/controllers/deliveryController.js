@@ -1,10 +1,11 @@
 const Delivery = require('../models/Delivery');
 const Donation = require('../models/Donation');
+const Request = require('../models/Request');
 
 // POST /api/delivery/accept  –  Volunteer accepts a donation (atomic)
 exports.acceptDelivery = async (req, res) => {
   try {
-    const { donationId } = req.body;
+    const { donationId, requestId } = req.body;
     if (!donationId)
       return res.status(400).json({ message: 'donationId required' });
 
@@ -17,8 +18,29 @@ exports.acceptDelivery = async (req, res) => {
     if (!donation)
       return res.status(409).json({ message: 'Donation already taken or not found' });
 
+    // If a matching request is provided, set deliveryLocation from it
+    let matchedRequest = null;
+    if (requestId) {
+      matchedRequest = await Request.findById(requestId).populate('ngoId', 'name phone location');
+      if (matchedRequest && matchedRequest.location) {
+        donation.deliveryLocation = {
+          type: 'Point',
+          coordinates: matchedRequest.location.coordinates,
+          address: matchedRequest.ngoId?.name
+            ? `${matchedRequest.ngoId.name} (NGO)`
+            : ''
+        };
+        await donation.save();
+
+        // Mark request as fulfilled
+        matchedRequest.status = 'fulfilled';
+        await matchedRequest.save();
+      }
+    }
+
     const delivery = await Delivery.create({
       donationId: donation._id,
+      requestId: requestId || null,
       volunteerId: req.user._id,
       currentStatus: 'accepted',
       statusTimeline: { accepted: new Date() },
@@ -34,7 +56,7 @@ exports.acceptDelivery = async (req, res) => {
       io.emit('deliveryCreated', delivery);
     }
 
-    res.status(201).json({ delivery, donation });
+    res.status(201).json({ delivery, donation, matchedRequest });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

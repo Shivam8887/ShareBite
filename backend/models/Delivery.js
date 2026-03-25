@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const deliverySchema = new mongoose.Schema({
   donationId: { type: mongoose.Schema.Types.ObjectId, ref: 'Donation', required: true },
+  requestId: { type: mongoose.Schema.Types.ObjectId, ref: 'Request', default: null },
   volunteerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   currentStatus: {
     type: String,
