@@ -123,7 +123,7 @@ export default function DonorDashboard() {
                 rows={3}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-dark-300 mb-1">Quantity</label>
                 <input
@@ -170,14 +170,14 @@ export default function DonorDashboard() {
           <p className="text-dark-500 text-center py-10">No donations yet. Create your first donation!</p>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-sm min-w-[600px]">
               <thead>
                 <tr className="text-dark-400 border-b border-dark-700/50">
-                  <th className="text-left py-3 px-2 font-medium">Title</th>
-                  <th className="text-left py-3 px-2 font-medium">Quantity</th>
-                  <th className="text-left py-3 px-2 font-medium">Expiry</th>
-                  <th className="text-left py-3 px-2 font-medium">Status</th>
-                  <th className="text-left py-3 px-2 font-medium">Volunteer</th>
+                  <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Title</th>
+                  <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Quantity</th>
+                  <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Expiry</th>
+                  <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Status</th>
+                  <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Volunteer</th>
                 </tr>
               </thead>
               <tbody className="text-dark-200">

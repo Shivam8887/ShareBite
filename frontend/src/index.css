@@ -4,6 +4,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base colors: dark theme */
+:root {
+  --color-primary-50:  240 253 244;
+  --color-primary-100: 220 252 231;
+  --color-primary-200: 187 247 208;
+  --color-primary-300: 134 239 172;
+  --color-primary-400: 74  222 128;
+  --color-primary-500: 34  197 94;
+  --color-primary-600: 22  163 74;
+  --color-primary-700: 21  128 61;
+  --color-primary-800: 22  101 52;
+  --color-primary-900: 20  83  45;
+
+  --color-dark-50:  248 250 252;
+  --color-dark-100: 241 245 249;
+  --color-dark-200: 226 232 240;
+  --color-dark-300: 203 213 225;
+  --color-dark-400: 148 163 184;
+  --color-dark-500: 100 116 139;
+  --color-dark-600: 71  85  105;
+  --color-dark-700: 51  65  85;
+  --color-dark-800: 30  41  59;
+  --color-dark-900: 15  23  42;
+  --color-dark-950: 2   6   23;
+  --color-glass-border: 148 163 184;
+}
+
+/* Light Theme */
+.light {
+  --color-dark-950: 248 250 252;
+  --color-dark-900: 241 245 249;
+  --color-dark-800: 226 232 240;
+  --color-dark-700: 203 213 225;
+  --color-dark-600: 148 163 184;
+  --color-dark-500: 100 116 139;
+  --color-dark-400: 71  85  105;
+  --color-dark-300: 51  65  85;
+  --color-dark-200: 30  41  59;
+  --color-dark-100: 15  23  42;
+  --color-dark-50:  2   6   23;
+  --color-glass-border: 0 0 0;
+}
+
+/* Blue Theme */
+.blue {
+  --color-primary-50:  239 246 255;
+  --color-primary-100: 219 234 254;
+  --color-primary-200: 191 219 254;
+  --color-primary-300: 147 197 253;
+  --color-primary-400: 96  165 250;
+  --color-primary-500: 59  130 246;
+  --color-primary-600: 37  99  235;
+  --color-primary-700: 29  78  216;
+  --color-primary-800: 30  64  175;
+  --color-primary-900: 30  58  138;
+}
+
+/* Green Theme */
+.green {
+  /* Green uses the same default primary and dark variables */
+}
+
+/* High Contrast Theme */
+.high-contrast {
+  --color-primary-50:  255 255 0;
+  --color-primary-100: 255 255 0;
+  --color-primary-200: 255 255 0;
+  --color-primary-300: 255 255 0;
+  --color-primary-400: 255 255 0;
+  --color-primary-500: 255 255 0;
+  --color-primary-600: 204 204 0;
+  --color-primary-700: 153 153 0;
+  --color-primary-800: 102 102 0;
+  --color-primary-900: 51  51  0;
+
+  --color-dark-950: 0 0 0;
+  --color-dark-900: 0 0 0;
+  --color-dark-800: 0 0 0;
+  --color-dark-700: 32 32 32;
+  --color-dark-600: 64 64 64;
+  --color-dark-500: 96 96 96;
+  --color-dark-400: 128 128 128;
+  --color-dark-300: 255 255 255;
+  --color-dark-200: 255 255 255;
+  --color-dark-100: 255 255 255;
+  --color-dark-50:  255 255 255;
+  --color-glass-border: 255 255 255;
+}
+
+body {
+  background-color: rgb(var(--color-dark-900));
+  color: rgb(var(--color-dark-300));
+}
 /* Leaflet fixes */
 .leaflet-container { width: 100%; height: 100%; z-index: 0; }
 
@@ -18,9 +111,9 @@
 
 /* Glass effect utility */
 .glass {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgb(var(--color-dark-900) / 0.7);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(148, 163, 184, 0.1);
+  border: 1px solid rgb(var(--color-glass-border) / 0.1);
 }
 
 /* Gradient text */

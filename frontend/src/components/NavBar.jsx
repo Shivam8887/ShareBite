@@ -1,13 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Menu, X, Heart, User } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
+import { Menu, X, Heart, User, Sun, Moon, Palette, Leaf, Eye } from 'lucide-react';
 
 export default function NavBar() {
   const { user, logout } = useAuth();
+  const { theme, setTheme } = useTheme();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isThemeDropdownOpen, setIsThemeDropdownOpen] = useState(false);
+  const themeDropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
+        setIsThemeDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const themes = [
+    { id: 'light', name: 'Light', icon: Sun },
+    { id: 'dark', name: 'Dark', icon: Moon },
+    { id: 'blue', name: 'Blue', icon: Palette },
+    { id: 'green', name: 'Green', icon: Leaf },
+    { id: 'high-contrast', name: 'High Contrast', icon: Eye },
+  ];
+  const activeTheme = themes.find(t => t.id === theme) || themes[1];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +82,36 @@ export default function NavBar() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
+          {/* Theme Switcher */}
+          <div className="relative" ref={themeDropdownRef}>
+            <button 
+              onClick={() => setIsThemeDropdownOpen(!isThemeDropdownOpen)}
+              className="p-2 text-dark-300 hover:text-dark-100 hover:bg-dark-800/50 rounded-xl transition-all flex items-center gap-2"
+              title="Change Theme"
+            >
+              <activeTheme.icon className="w-5 h-5 text-primary-400 transform transition-transform duration-300 hover:rotate-12" />
+            </button>
+            
+            {isThemeDropdownOpen && (
+              <div className="absolute top-full right-0 mt-2 w-48 glass rounded-xl border border-dark-700/50 shadow-xl overflow-hidden py-1 z-50">
+                {themes.map((t) => (
+                  <button
+                    key={t.id}
+                    onClick={() => { setTheme(t.id); setIsThemeDropdownOpen(false); }}
+                    className={`w-full text-left px-4 py-2 text-sm flex items-center gap-3 transition-colors ${
+                      theme === t.id 
+                        ? 'bg-primary-500/20 text-primary-400 font-medium' 
+                        : 'text-dark-300 hover:bg-dark-800 hover:text-dark-100'
+                    }`}
+                  >
+                    <t.icon className="w-4 h-4" />
+                    {t.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           {user ? (
             <div className="flex items-center gap-4">
               <Link 
@@ -107,6 +168,30 @@ export default function NavBar() {
             </Link>
           ))}
           <div className="h-px bg-dark-700/50 w-full my-2"></div>
+          
+          {/* Theme Options for Mobile */}
+          <div className="py-2">
+            <span className="text-sm text-dark-400 font-medium px-2 uppercase tracking-wider">Theme</span>
+            <div className="flex flex-wrap gap-2 mt-2 px-2">
+              {themes.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => { setTheme(t.id); setIsMobileMenuOpen(false); }}
+                  className={`p-2 rounded-xl border transition-all flex items-center gap-2 ${
+                    theme === t.id 
+                      ? 'bg-primary-500/20 border-primary-500/50 text-primary-400' 
+                      : 'bg-dark-800/50 border-dark-700/50 text-dark-300 hover:bg-dark-800'
+                  }`}
+                  title={t.name}
+                >
+                  <t.icon className="w-5 h-5" />
+                  <span className="text-xs">{t.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="h-px bg-dark-700/50 w-full my-2"></div>
+
           {user ? (
             <>
               <Link 
