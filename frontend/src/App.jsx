@@ -18,6 +18,8 @@ const AboutUs = React.lazy(() => import('./pages/AboutUs'));
 const CommunityGuidelines = React.lazy(() => import('./pages/CommunityGuidelines'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
+const ForgotPassword = React.lazy(() => import('./pages/ForgotPassword'));
+const ResetPassword = React.lazy(() => import('./pages/ResetPassword'));
 const DonorDashboard = React.lazy(() => import('./pages/DonorDashboard'));
 const NgoDashboard = React.lazy(() => import('./pages/NgoDashboard'));
 const VolunteerDashboard = React.lazy(() => import('./pages/VolunteerDashboard'));
@@ -49,6 +51,8 @@ export default function App() {
           <Route path="/impact" element={<Impact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
