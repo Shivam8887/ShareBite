@@ -29,6 +29,7 @@ const mapRoutes = require('./routes/mapRoutes');
 const volunteerRoutes = require('./routes/volunteerRoutes');
 
 const app = express();
+app.set("trust proxy", 1);
 const server = http.createServer(app);
 
 // Socket.io
