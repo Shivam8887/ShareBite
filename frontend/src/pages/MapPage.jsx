@@ -103,7 +103,7 @@ export default function MapPage() {
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h2 className="text-2xl font-bold text-white mb-1">Live Map</h2>
+          <h2 className="text-2xl font-bold text-dark-900 dark:text-white mb-1">Live Map</h2>
           <p className="text-dark-400 text-sm">
             Real-time view of nearby donations, requests, and volunteers
           </p>
@@ -194,7 +194,7 @@ export default function MapPage() {
 
         {/* Legend */}
         <div className="absolute bottom-6 right-6 z-[400] bg-dark-900/90 backdrop-blur-md p-4 rounded-xl border border-dark-700/50 shadow-xl">
-          <h4 className="text-white font-semibold text-sm mb-3">Legend</h4>
+          <h4 className="text-dark-900 dark:text-white font-semibold text-sm mb-3">Legend</h4>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-blue-500"></span>

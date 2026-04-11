@@ -74,7 +74,7 @@ export default function ResetPassword() {
 
         {/* Form Card */}
         <div className="glass rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-dark-100 mb-2">Set new password</h2>
+          <h2 className="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2">Set new password</h2>
           <p className="text-dark-400 text-sm mb-6">
             Choose a strong password for your account.
           </p>

@@ -61,7 +61,7 @@ export default function AboutUs() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-3xl font-bold text-white">Our Story</h2>
+            <h2 className="text-3xl font-bold text-dark-900 dark:text-white">Our Story</h2>
             <div className="space-y-4 text-dark-300 leading-relaxed text-lg">
               <p>
                 ShareBite began with a simple observation: every day, massive amounts of perfectly good food are thrown away by restaurants, events, and households, while simultaneously, people in our very communities go to bed hungry.
@@ -84,7 +84,7 @@ export default function AboutUs() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5"></div>
             <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-6 py-8">
               <ShieldCheck className="w-20 h-20 text-primary-400" />
-              <h3 className="text-2xl font-bold text-white">Share Food, Spread Hope.</h3>
+              <h3 className="text-2xl font-bold text-dark-900 dark:text-white">Share Food, Spread Hope.</h3>
               <p className="text-dark-300">Join thousands of others in the movement against food waste.</p>
             </div>
           </motion.div>
@@ -93,7 +93,7 @@ export default function AboutUs() {
         {/* Core Values Section */}
         <section className="space-y-12">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Core Values</h2>
+            <h2 className="text-3xl font-bold text-dark-900 dark:text-white mb-4">Our Core Values</h2>
             <p className="text-dark-400 max-w-2xl mx-auto">The principles that guide our platform, our team, and our wonderful community.</p>
           </div>
           
@@ -110,7 +110,7 @@ export default function AboutUs() {
                 <div className="w-16 h-16 bg-dark-800 rounded-2xl flex items-center justify-center mb-6">
                   {v.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{v.title}</h3>
+                <h3 className="text-xl font-semibold text-dark-900 dark:text-white mb-3">{v.title}</h3>
                 <p className="text-dark-300 leading-relaxed text-sm">{v.desc}</p>
               </motion.div>
             ))}

@@ -81,7 +81,7 @@ export default function CommunityGuidelines() {
                   {section.icon}
                 </div>
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold text-white">{section.title}</h2>
+                  <h2 className="text-2xl font-bold text-dark-900 dark:text-white">{section.title}</h2>
                   <ul className="space-y-3">
                     {section.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex items-start gap-3 text-dark-300">

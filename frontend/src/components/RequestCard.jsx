@@ -53,7 +53,7 @@ export default function RequestCard({
         {/* Header Row */}
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1 min-w-0">
-            <h4 className="text-sm font-semibold text-dark-100 truncate">{donation.title}</h4>
+            <h4 className="text-sm font-semibold text-dark-900 dark:text-dark-100 truncate">{donation.title}</h4>
             <p className="text-xs text-dark-400 mt-0.5">
               Qty: {donation.quantity} • {timeAgo(donation.createdAt)}
             </p>

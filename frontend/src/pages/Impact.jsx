@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 
 export default function Impact() {
   const stats = [
-    { label: "Meals Saved", value: "10,000+", icon: <UtensilsCrossed className="w-8 h-8 text-primary-400" /> },
-    { label: "Active NGOs", value: "150+", icon: <Users className="w-8 h-8 text-accent-400" /> },
-    { label: "Volunteers", value: "500+", icon: <HandHeart className="w-8 h-8 text-primary-600" /> },
-    { label: "Cities Reached", value: "12", icon: <Globe className="w-8 h-8 text-white" /> }
+    { label: "Meals Saved", value: "100+", icon: <UtensilsCrossed className="w-8 h-8 text-primary-400" /> },
+    { label: "Active NGOs", value: "10+", icon: <Users className="w-8 h-8 text-accent-400" /> },
+    { label: "Volunteers", value: "10+", icon: <HandHeart className="w-8 h-8 text-primary-600" /> },
+    { label: "Cities Reached", value: "2+", icon: <Globe className="w-8 h-8 text-white" /> }
   ];
 
   const milestones = [
-    { year: "2024", title: "Launch of ShareBite", desc: "Started operations with our first 5 NGO partners and successfully saved 100 meals in the first week." },
-    { year: "2025", title: "Expanding the Network", desc: "Partnered with over 50 restaurants, hitting the milestone of 5,000 meals saved." },
+    { year: "2025", title: "Launch of ShareBite", desc: "Started operations with our first 5 NGO partners and successfully saved 100 meals in the first week." },
+    { year: "2026", title: "Expanding the Network", desc: "Partnered with over 50 restaurants, hitting the milestone of 5,000 meals saved." },
     { year: "2026", title: "National Outreach", desc: "Expanded to 12 cities across the nation with a robust fleet of dedicated volunteers." },
   ];
 
@@ -73,7 +73,7 @@ export default function Impact() {
         <div className="max-w-4xl mx-auto glass p-10 md:p-16 rounded-3xl border border-dark-700/50 mb-24">
           <div className="flex items-center gap-4 mb-12">
             <TrendingUp className="w-8 h-8 text-primary-400" />
-            <h2 className="text-3xl font-bold text-white">Our Journey</h2>
+            <h2 className="text-3xl font-bold text-dark-900 dark:text-white">Our Journey</h2>
           </div>
           
           <div className="space-y-12">
@@ -97,7 +97,7 @@ export default function Impact() {
                     {milestone.year}
                   </div>
                   <div className="flex-1 pb-12 md:pb-0 border-b md:border-b-0 border-dark-800 last:border-0">
-                    <h3 className="text-2xl font-bold text-white mb-3">{milestone.title}</h3>
+                    <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-3">{milestone.title}</h3>
                     <p className="text-dark-300 leading-relaxed">{milestone.desc}</p>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function Impact() {
           viewport={{ once: true }}
           className="text-center bg-dark-800/50 p-12 rounded-3xl border border-dark-700/50"
         >
-          <h2 className="text-3xl font-bold text-white mb-6">Be Part of Our Story</h2>
+          <h2 className="text-3xl font-bold text-dark-900 dark:text-white mb-6">Be Part of Our Story</h2>
           <p className="text-dark-300 mb-8 max-w-xl mx-auto">
             The simplest actions can have the biggest impact. Sign up as a donor or a volunteer and start making a difference today.
           </p>

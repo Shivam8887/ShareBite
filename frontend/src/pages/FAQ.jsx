@@ -274,7 +274,7 @@ const FAQ = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-transparent"></div>
           <div className="relative z-10 space-y-2">
-            <h2 className="text-2xl font-bold text-white">Didn't find your answer?</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">Didn't find your answer?</h2>
             <p className="text-dark-300 text-lg">
               Our support team is here to help! Reach out to us with any questions.
             </p>

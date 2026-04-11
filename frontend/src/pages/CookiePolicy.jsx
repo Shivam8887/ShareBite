@@ -37,7 +37,7 @@ const CookiePolicy = () => {
         >
           {/* Section 1 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">1. What are cookies?</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">1. What are cookies?</h2>
             <p>
               Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the owners of the site.
             </p>
@@ -45,19 +45,19 @@ const CookiePolicy = () => {
 
           {/* Section 2 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">2. How we use cookies</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">2. How we use cookies</h2>
             <p>We use cookies and similar tracking technologies for several purposes:</p>
             <ul className="space-y-4 list-none pl-0">
               <li className="bg-dark-800/50 p-4 rounded-xl border border-dark-700">
-                <h3 className="text-white font-medium mb-1">Essential Cookies</h3>
+                <h3 className="text-dark-900 dark:text-white font-medium mb-1">Essential Cookies</h3>
                 <p className="text-sm">Required for the platform to function properly. These include cookies that enable you to log into secure areas like your User Dashboard.</p>
               </li>
               <li className="bg-dark-800/50 p-4 rounded-xl border border-dark-700">
-                <h3 className="text-white font-medium mb-1">Analytical/Performance Cookies</h3>
+                <h3 className="text-dark-900 dark:text-white font-medium mb-1">Analytical/Performance Cookies</h3>
                 <p className="text-sm">These allow us to recognize and count the number of visitors and see how visitors move around our platform when using it. This helps us improve the way ShareBite works.</p>
               </li>
               <li className="bg-dark-800/50 p-4 rounded-xl border border-dark-700">
-                <h3 className="text-white font-medium mb-1">Functionality Cookies</h3>
+                <h3 className="text-dark-900 dark:text-white font-medium mb-1">Functionality Cookies</h3>
                 <p className="text-sm">Used to recognize you when you return to our platform. This enables us to personalize our content for you and remember your preferences.</p>
               </li>
             </ul>
@@ -65,7 +65,7 @@ const CookiePolicy = () => {
 
           {/* Section 3 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">3. Third-party cookies</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">3. Third-party cookies</h2>
             <p>
               In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Service and deliver map location data (such as Leaflet tracking).
             </p>
@@ -73,7 +73,7 @@ const CookiePolicy = () => {
 
           {/* Section 4 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">4. Managing your cookie preferences</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">4. Managing your cookie preferences</h2>
             <p>
               You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service (like staying securely logged in).
             </p>

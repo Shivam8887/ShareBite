@@ -85,7 +85,7 @@ export default function DonorDashboard() {
       {/* Create Donation Button / Form */}
       <div className="glass rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-dark-100">
+          <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100">
             {showForm ? 'Create New Donation' : 'Your Donations'}
           </h3>
           <button
@@ -198,7 +198,7 @@ export default function DonorDashboard() {
 
       {/* Map */}
       <div className="glass rounded-xl p-4">
-        <h3 className="text-lg font-semibold text-dark-100 mb-3">Your Donations on Map</h3>
+        <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-3">Your Donations on Map</h3>
         <MapView
           center={position}
           donations={donations}

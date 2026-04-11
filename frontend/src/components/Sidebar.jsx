@@ -49,9 +49,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
       </button>
 
       {/* Brand */}
-      <div className="px-6 py-5 border-b border-dark-700/50">
-        <h1 className="text-2xl font-bold gradient-text">ShareBite</h1>
-        <p className="text-xs text-dark-500 mt-0.5">Food Donation Platform</p>
+      <div className="px-6 py-5 border-b border-dark-700/50 flex items-center gap-3">
+        <img src="/ShareBiteicon.png" alt="ShareBite Logo" className="w-8 h-8 object-contain" />
+        <div>
+          <h1 className="text-2xl font-bold gradient-text">ShareBite</h1>
+          <p className="text-xs text-dark-500 mt-0.5">Food Donation Platform</p>
+        </div>
       </div>
 
       {/* Role Badge */}

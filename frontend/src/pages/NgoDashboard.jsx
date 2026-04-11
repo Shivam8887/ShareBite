@@ -84,7 +84,7 @@ export default function NgoDashboard() {
 
       {/* Map with nearby donations + requests */}
       <div className="glass rounded-xl p-4">
-        <h3 className="text-lg font-semibold text-dark-100 mb-3">Nearby Donations & My Requests</h3>
+        <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-3">Nearby Donations & My Requests</h3>
         <MapView
           center={position}
           donations={nearbyDonations}
@@ -97,7 +97,7 @@ export default function NgoDashboard() {
         {/* Create Request / My Requests */}
         <div className="glass rounded-xl p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-dark-100">
+            <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100">
               {showForm ? 'Create Food Request' : 'My Requests'}
             </h3>
             <button
@@ -173,7 +173,7 @@ export default function NgoDashboard() {
 
         {/* Nearby Donations */}
         <div className="glass rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-dark-100 mb-4">Nearby Available Donations</h3>
+          <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-4">Nearby Available Donations</h3>
           {nearbyDonations.length === 0 ? (
             <p className="text-dark-500 text-center py-8">No nearby donations found</p>
           ) : (

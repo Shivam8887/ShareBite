@@ -90,7 +90,7 @@ export default function AdminDashboard() {
 
       {/* Map */}
       <div className="glass rounded-xl p-4">
-        <h3 className="text-lg font-semibold text-dark-100 mb-3">System Overview Map</h3>
+        <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-3">System Overview Map</h3>
         <MapView
           center={position}
           donations={donations}

@@ -66,7 +66,7 @@ export default function RequestsPage() {
         ) : data.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-4xl mb-3">📭</p>
-            <h3 className="text-lg font-medium text-dark-200">No items found</h3>
+            <h3 className="text-lg font-medium text-dark-900 dark:text-dark-200">No items found</h3>
             <p className="text-dark-500 mt-1">You haven't made any records yet.</p>
           </div>
         ) : (

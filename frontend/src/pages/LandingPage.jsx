@@ -1,132 +1,214 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Search, Users, ShieldCheck, HeartPulse, ExternalLink } from 'lucide-react';
+import { ArrowRight, MapPin, Users, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import HeroCarousel from '../components/HeroCarousel';
 
-
 export default function LandingPage() {
+
   const features = [
     {
       icon: <MapPin className="w-6 h-6 text-primary-400" />,
       title: "Real-time Location",
-      desc: "Auto-detects location for seamless matching between donors and NGOs."
+      desc: "Our system automatically detects and matches your location with nearby NGOs and volunteers, ensuring faster pickup and minimal delay in delivering food to those who need it most."
     },
     {
       icon: <Users className="w-6 h-6 text-accent-400" />,
       title: "Direct Volunteer Pickup",
-      desc: "Like food delivery, but for donations. Volunteers accept and deliver directly."
+      desc: "Just like a delivery app, volunteers can accept requests instantly and pick up food directly from donors, ensuring quick, efficient, and reliable delivery to NGOs."
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-primary-600" />,
       title: "Secure & Transparent",
-      desc: "Real-time status tracking and robust auth structure ensure safe operations."
+      desc: "Every donation is tracked in real-time with proper authentication, giving complete visibility and trust to donors, NGOs, and volunteers throughout the process."
     }
   ];
 
   const stats = [
-    { label: "Meals Saved", value: "10,000+" },
-    { label: "Active NGOs", value: "150+" },
-    { label: "Volunteers", value: "500+" },
-    { label: "Cities", value: "12" }
+    { label: "Meals Saved", value: "100+" },
+    { label: "Active NGOs", value: "10+" },
+    { label: "Volunteers", value: "10+" },
+    { label: "Cities", value: "2+" }
   ];
 
   return (
     <div className="min-h-screen pt-24 font-sans selection:bg-primary-500/30">
+      
       <SEO 
         title="Home"
-        description="ShareBite: Connect restaurants and individuals with surplus food to NGOs and volunteers in real-time."
+        description="ShareBite connects surplus food with NGOs and volunteers in real-time."
       />
-      {/* Hero Section */}
+
+      {/* HERO */}
       <HeroCarousel />
 
+      {/* ================= PROBLEM ================= */}
+      <section className="max-w-7xl mx-auto px-6 py-24 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-6">
+          The Problem We’re Solving
+        </h2>
 
-      {/* Stats Divider */}
-      <div className="border-y border-dark-800 bg-dark-900/50">
+        <p className="text-dark-300 max-w-3xl mx-auto text-lg leading-relaxed">
+          Every day, restaurants, events, and households generate large amounts of surplus food that goes to waste. 
+          At the same time, millions of people struggle to find even a single meal. The issue is not the lack of food, 
+          but the lack of a real-time system that connects food donors with those who need it.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
+          <div className="glass p-6 rounded-2xl">
+            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-2">Food Waste</h3>
+            <p className="text-dark-400">
+              Large quantities of perfectly edible food are discarded daily due to lack of distribution channels and awareness.
+            </p>
+          </div>
+
+          <div className="glass p-6 rounded-2xl">
+            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-2">Hunger</h3>
+            <p className="text-dark-400">
+              Millions of underprivileged people struggle with hunger and malnutrition despite food being available elsewhere.
+            </p>
+          </div>
+
+          <div className="glass p-6 rounded-2xl">
+            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-2">No Connection</h3>
+            <p className="text-dark-400">
+              There is no efficient real-time system to connect donors, NGOs, and volunteers in a seamless way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SOLUTION ================= */}
+      <section className="bg-dark-900/50 py-24">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-6">
+            Our Solution
+          </h2>
+
+          <p className="text-dark-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+            ShareBite is a smart platform that bridges the gap between surplus food and hunger. 
+            By using real-time location tracking, intelligent matching, and a strong volunteer network, 
+            we ensure that excess food reaches the right people quickly and efficiently.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="glass p-6 rounded-2xl">
+              <h3 className="text-dark-900 dark:text-white font-semibold text-lg mb-2">Smart Matching</h3>
+              <p className="text-dark-400">
+                Automatically connects donors with the nearest NGOs and available volunteers using location-based technology.
+              </p>
+            </div>
+
+            <div className="glass p-6 rounded-2xl">
+              <h3 className="text-dark-900 dark:text-white font-semibold text-lg mb-2">Fast Delivery</h3>
+              <p className="text-dark-400">
+                Volunteers pick up food quickly and deliver it efficiently, reducing spoilage and ensuring timely distribution.
+              </p>
+            </div>
+
+            <div className="glass p-6 rounded-2xl">
+              <h3 className="text-dark-900 dark:text-white font-semibold text-lg mb-2">Full Transparency</h3>
+              <p className="text-dark-400">
+                Real-time tracking allows all users to monitor the journey of donations from pickup to delivery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= STATS ================= */}
+      <section className="border-y border-dark-800 bg-dark-900/50">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
               <motion.div 
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                key={i} 
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-dark-400 font-medium tracking-wide uppercase">{stat.label}</div>
+                <div className="text-3xl font-bold text-white">{stat.value}</div>
+                <div className="text-dark-400 text-sm uppercase">{stat.label}</div>
               </motion.div>
             ))}
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-10"
-          >
-            <Link to="/impact" className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-medium transition-colors">
-              View Our Full Impact <ArrowRight className="w-4 h-4" />
+          <div className="text-center mt-8">
+            <Link to="/impact" className="text-primary-400 hover:text-primary-300">
+              View Full Impact →
             </Link>
-          </motion.div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Features Section */}
-      <div className="max-w-7xl mx-auto px-6 py-32 relative">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How ShareBite Works</h2>
-          <p className="text-dark-400 max-w-2xl mx-auto">A seamless platform connecting the dots between surplus food and empty stomachs.</p>
-        </div>
+      {/* ================= FEATURES ================= */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <h2 className="text-3xl font-bold text-dark-900 dark:text-white text-center mb-16">
+          Key Features
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, i) => (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              key={i}
-              className="glass p-8 rounded-3xl hover:bg-dark-800/40 transition-colors border border-dark-700/50"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-dark-800 flex items-center justify-center mb-6">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-              <p className="text-dark-300 leading-relaxed">{feature.desc}</p>
-            </motion.div>
+          {features.map((f, i) => (
+            <div key={i} className="glass p-8 rounded-3xl">
+              <div className="mb-4">{f.icon}</div>
+              <h3 className="text-dark-900 dark:text-white text-xl font-bold mb-2">{f.title}</h3>
+              <p className="text-dark-400 leading-relaxed">{f.desc}</p>
+            </div>
           ))}
         </div>
-        
-        <div className="text-center mt-12">
-          <Link to="/how-it-works">
-            <button className="px-8 py-4 bg-dark-800 hover:bg-dark-700 text-white font-medium rounded-full border border-dark-700 transition-colors">
-              Explore Our Process in Detail
+      </section>
+      {/* ================= USERS ================= */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <h2 className="text-3xl font-bold text-dark-900 dark:text-white text-center mb-16">
+          Who Can Use ShareBite?
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="glass p-8 rounded-3xl">
+            <h3 className="text-dark-900 dark:text-white text-xl font-bold">Restaurants</h3>
+            <p className="text-dark-400 mt-2">
+              Easily donate surplus food instead of wasting it, while contributing to a meaningful cause.
+            </p>
+          </div>
+
+          <div className="glass p-8 rounded-3xl">
+            <h3 className="text-dark-900 dark:text-white text-xl font-bold">NGOs</h3>
+            <p className="text-dark-400 mt-2">
+              Receive food donations efficiently and distribute them to communities in need.
+            </p>
+          </div>
+
+          <div className="glass p-8 rounded-3xl">
+            <h3 className="text-dark-900 dark:text-white text-xl font-bold">Volunteers</h3>
+            <p className="text-dark-400 mt-2">
+              Join as a volunteer and help bridge the gap by picking up and delivering food.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="max-w-7xl mx-auto px-6 pb-32">
+        <div className="glass p-16 rounded-3xl text-center border border-primary-500/20">
+          <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-6">
+            Ready to Make an Impact?
+          </h2>
+
+          <p className="text-dark-300 mb-10">
+            Join ShareBite today and become a part of a growing movement to reduce food waste 
+            and fight hunger through technology and community collaboration.
+          </p>
+
+          <Link to="/signup">
+            <button className="px-8 py-4 bg-primary-500 hover:bg-primary-400 text-dark-900 font-bold rounded-full">
+              Get Started
             </button>
           </Link>
         </div>
-      </div>
+      </section>
 
-      {/* CTA Section */}
-      <div className="max-w-7xl mx-auto px-6 pb-32">
-        <div className="relative rounded-3xl overflow-hidden glass border border-primary-500/20 p-12 md:p-16 text-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-primary-300/10 z-0"></div>
-          
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to make an impact?</h2>
-            <p className="text-dark-200 text-lg mb-10">Whether you're a restaurant with surplus food, an NGO needing supplies, or an individual ready to volunteer—we need you.</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/signup">
-                <button className="px-8 py-4 bg-primary-500 hover:bg-primary-400 text-dark-950 font-bold rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-                  Create an Account
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
