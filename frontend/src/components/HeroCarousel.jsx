@@ -82,7 +82,7 @@ const HeroCarousel = () => {
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10">
-                <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white mb-8 max-w-5xl leading-tight animate-fade-in-up drop-shadow-lg">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-dark-900 dark:text-white mb-8 max-w-5xl leading-tight animate-fade-in-up drop-shadow-lg">
                   {slide.text}
                 </h1>
                 

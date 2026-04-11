@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 group mb-6">
               <div className="p-2 bg-primary-500/10 rounded-xl">
-                <Heart className="w-6 h-6 text-primary-400" />
+                <img src="/ShareBiteicon.png" alt="ShareBite Logo" className="w-6 h-6 object-contain" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-200 bg-clip-text text-transparent">
                 ShareBite
@@ -32,13 +32,14 @@ export default function Footer() {
               Connecting surplus food with those in need. Join our community of donors, NGOs, and volunteers to make a real difference, one meal at a time.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center text-dark-400 hover:text-primary-400 hover:bg-dark-800 transition-all">
+              <a  className="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center text-dark-400 hover:text-primary-400 hover:bg-dark-800 transition-all">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center text-dark-400 hover:text-primary-400 hover:bg-dark-800 transition-all">
+              <a href='https://github.com/Shivam8887/ShareBite' target="_blank"
+rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center text-dark-400 hover:text-primary-400 hover:bg-dark-800 transition-all">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center text-dark-400 hover:text-primary-400 hover:bg-dark-800 transition-all">
+              <a className="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center text-dark-400 hover:text-primary-400 hover:bg-dark-800 transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -46,7 +47,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-dark-900 dark:text-white font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link to="/about" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">About Us</Link></li>
               <li><Link to="/contact" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Contact Us</Link></li>
@@ -58,7 +59,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold mb-6">Legal</h3>
+            <h3 className="text-dark-900 dark:text-white font-semibold mb-6">Legal</h3>
             <ul className="space-y-3">
               <li><Link to="/privacy" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" onClick={scrollToTop} className="text-dark-400 hover:text-primary-400 text-sm transition-colors">Terms of Service</Link></li>
@@ -69,7 +70,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-6">Contact Us</h3>
+            <h3 className="text-dark-900 dark:text-white font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary-400 shrink-0 mt-0.5" />
@@ -81,7 +82,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary-400 shrink-0" />
-                <a href="mailto:hello@sharebite.org" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">hello@sharebite.org</a>
+                <a href="mailto:hello@sharebite.org" className="text-dark-400 hover:text-primary-400 text-sm transition-colors">info@sharebite.com</a>
               </li>
             </ul>
           </div>

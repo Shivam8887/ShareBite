@@ -60,7 +60,7 @@ export default function NavBar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <div className="p-2 bg-primary-500/10 rounded-xl group-hover:bg-primary-500/20 transition-colors">
-            <Heart className="w-6 h-6 text-primary-400 group-hover:scale-110 transition-transform" />
+            <img src="/ShareBiteicon.png" alt="ShareBite Logo" className="w-6 h-6 object-contain group-hover:scale-110 transition-transform" />
           </div>
           <span className="text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-200 bg-clip-text text-transparent">
             ShareBite

@@ -30,8 +30,8 @@ export default function DashboardLayout() {
             >
               <Menu size={20} />
             </button>
-            <h2 className="text-lg font-semibold text-dark-100 capitalize hidden sm:block">{user?.role} Dashboard</h2>
-            <h2 className="text-lg font-semibold text-dark-100 capitalize sm:hidden">Dashboard</h2>
+            <h2 className="text-lg font-semibold text-dark-900 dark:text-dark-100 capitalize hidden sm:block">{user?.role} Dashboard</h2>
+            <h2 className="text-lg font-semibold text-dark-900 dark:text-dark-100 capitalize sm:hidden">Dashboard</h2>
           </div>
           <div className="flex items-center gap-3 md:gap-4">
             <div className="text-right hidden sm:block">

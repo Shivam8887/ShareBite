@@ -59,7 +59,7 @@ export default function Signup() {
 
         {/* Form Card */}
         <div className="glass rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-dark-100 mb-6">Create your account</h2>
+          <h2 className="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-6">Create your account</h2>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>

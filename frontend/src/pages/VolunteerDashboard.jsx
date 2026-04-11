@@ -137,7 +137,7 @@ export default function VolunteerDashboard() {
         <div className="glass rounded-xl p-6 border-l-4 border-l-primary-500 shadow-xl shadow-primary-500/10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
-              <h3 className="text-xl font-bold text-dark-100 flex items-center gap-2">
+              <h3 className="text-xl font-bold text-dark-900 dark:text-dark-100 flex items-center gap-2">
                 <span className="live-pulse inline-block w-3 h-3 rounded-full bg-green-500"></span>
                 Active Delivery Sequence
               </h3>
@@ -268,7 +268,7 @@ export default function VolunteerDashboard() {
         <div className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-white">Find Requests</h2>
+              <h2 className="text-2xl font-bold text-dark-900 dark:text-white">Find Requests</h2>
               <p className="text-dark-400 mt-1">Smart matching based on distance, urgency, and wait time.</p>
             </div>
             
@@ -307,7 +307,7 @@ export default function VolunteerDashboard() {
               <div className="w-16 h-16 bg-dark-800 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Filter size={24} className="text-dark-400" />
               </div>
-              <h3 className="text-lg font-semibold text-dark-200">No requests found</h3>
+              <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-200">No requests found</h3>
               <p className="text-dark-400 mt-2 max-w-sm mx-auto">There are no pending donations within {radius}km of your current location. Try expanding your radius.</p>
               <button onClick={() => { setRadius(20); setTimeout(fetchData, 100); }} className="mt-6 px-4 py-2 bg-primary-600/20 text-primary-400 font-medium rounded-lg hover:bg-primary-600/30 transition">
                 Expand to 20km
@@ -386,7 +386,7 @@ export default function VolunteerDashboard() {
       {/* ── Volunteer History ── */}
       {(!activeDelivery || activeDelivery.currentStatus === 'delivered') && (
         <div className="mt-12 glass rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <h3 className="text-lg font-semibold text-dark-900 dark:text-white mb-4 flex items-center gap-2">
             <History size={18} className="text-primary-400" />
             Delivery History
           </h3>

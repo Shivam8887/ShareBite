@@ -37,7 +37,7 @@ const TermsOfService = () => {
         >
           {/* Section 1 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">1. Acceptance of Terms</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">1. Acceptance of Terms</h2>
             <p>
               By accessing and using the ShareBite platform, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
             </p>
@@ -45,7 +45,7 @@ const TermsOfService = () => {
 
           {/* Section 2 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">2. Use License</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">2. Use License</h2>
             <p>
               Permission is granted to temporarily download one copy of the materials (information or software) on ShareBite for personal, non-commercial transitory viewing only. Under this license you may not:
             </p>
@@ -61,7 +61,7 @@ const TermsOfService = () => {
 
           {/* Section 3 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">3. Disclaimer</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">3. Disclaimer</h2>
             <p>
               The materials on ShareBite are provided on an 'as is' basis. ShareBite makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
             </p>
@@ -69,7 +69,7 @@ const TermsOfService = () => {
 
           {/* Section 4 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">4. User Responsibilities</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">4. User Responsibilities</h2>
             <p>As a user of ShareBite, you agree and are responsible for:</p>
             <ul className="space-y-2 list-none pl-0">
               <li className="flex items-start gap-3"><span className="text-accent-500 mt-1.5">•</span><span>Maintaining the confidentiality of your account information.</span></li>
@@ -81,7 +81,7 @@ const TermsOfService = () => {
 
           {/* Section 5 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">5. Termination</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">5. Termination</h2>
             <p>
               ShareBite may terminate or suspend your account and access to the platform at any time, for any reason, without prior notice or liability. Reasons for termination may include, but are not limited to, violation of these terms, illegal activity, or conduct we deem harmful.
             </p>
@@ -89,7 +89,7 @@ const TermsOfService = () => {
 
           {/* Section 6 */}
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">6. Modifications</h2>
+            <h2 className="text-2xl font-bold text-dark-900 dark:text-white">6. Modifications</h2>
             <p>
               ShareBite may revise these terms of service at any time without notice. By using the platform, you are agreeing to be bound by the then current version of these terms.
             </p>
