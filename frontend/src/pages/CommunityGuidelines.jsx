@@ -51,7 +51,7 @@ export default function CommunityGuidelines() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-white tracking-tight"
+            className="text-4xl md:text-5xl font-bold text-dark-50 tracking-tight"
           >
             Community Guidelines
           </motion.h1>
@@ -59,7 +59,7 @@ export default function CommunityGuidelines() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-dark-300 text-lg max-w-2xl mx-auto"
+            className="text-gray-700 dark:text-dark-300 text-lg max-w-2xl mx-auto"
           >
             To ensure ShareBite remains a safe, effective, and welcoming platform for everyone, we require all users to adhere to these core guidelines.
           </motion.p>
@@ -74,17 +74,17 @@ export default function CommunityGuidelines() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="glass rounded-3xl p-8 border border-dark-700/50 relative overflow-hidden"
+              className="glass rounded-3xl p-8 border border-gray-200 dark:border-dark-700/50 relative overflow-hidden"
             >
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-full bg-dark-800 flex items-center justify-center shrink-0 border border-dark-700">
+                <div className="w-12 h-12 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center shrink-0 border border-gray-200 dark:border-dark-700">
                   {section.icon}
                 </div>
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold text-dark-900 dark:text-white">{section.title}</h2>
+                  <h2 className="text-2xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">{section.title}</h2>
                   <ul className="space-y-3">
                     {section.points.map((point, pIdx) => (
-                      <li key={pIdx} className="flex items-start gap-3 text-dark-300">
+                      <li key={pIdx} className="flex items-start gap-3 text-gray-700 dark:text-dark-300">
                         <span className="text-primary-500 mt-1.5">•</span>
                         <span className="leading-relaxed">{point}</span>
                       </li>
@@ -103,7 +103,7 @@ export default function CommunityGuidelines() {
           viewport={{ once: true }}
           className="text-center p-8 bg-primary-500/10 rounded-2xl border border-primary-500/20"
         >
-          <p className="text-primary-100 font-medium">
+          <p className="text-primary-100 font-medium text-gray-700 dark:text-dark-300 leading-relaxed">
             Violations of these guidelines may result in warnings, temporary suspensions, or permanent bans from the ShareBite platform. Let's work together to help safely!
           </p>
         </motion.div>

@@ -46,52 +46,52 @@ export default function RequestsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center bg-dark-900 p-6 rounded-xl border border-dark-700/50 relative overflow-hidden">
+      <div className="flex justify-between items-center bg-gray-50 dark:bg-dark-900 p-6 rounded-xl border border-gray-200 dark:border-dark-700/50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
         <div className="relative z-10">
-          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600 mb-2">
+          <h2 className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600 mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
             {getTitle()}
           </h2>
-          <p className="text-dark-400 max-w-lg">
+          <p className="max-w-lg text-gray-700 dark:text-dark-300 leading-relaxed">
             Track and manage your history of items.
           </p>
         </div>
       </div>
 
-      <div className="bg-dark-900 rounded-xl overflow-hidden border border-dark-700/50 p-6">
+      <div className="bg-gray-50 dark:bg-dark-900 rounded-xl overflow-hidden border border-gray-200 dark:border-dark-700/50 p-6">
         {loading ? (
           <div className="flex justify-center py-10">
             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary-500"></div>
           </div>
         ) : data.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-4xl mb-3">📭</p>
-            <h3 className="text-lg font-medium text-dark-900 dark:text-dark-200">No items found</h3>
-            <p className="text-dark-500 mt-1">You haven't made any records yet.</p>
+            <p className="text-4xl mb-3 text-gray-700 dark:text-dark-300 leading-relaxed">📭</p>
+            <h3 className="text-lg font-medium text-gray-900 dark:text-dark-50 font-bold tracking-tight">No items found</h3>
+            <p className="mt-1 text-gray-700 dark:text-dark-300 leading-relaxed">You haven't made any records yet.</p>
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-dark-700/50">
-                  <th className="py-3 px-4 text-sm font-semibold text-dark-300">Title / Item</th>
-                  <th className="py-3 px-4 text-sm font-semibold text-dark-300">Status</th>
-                  <th className="py-3 px-4 text-sm font-semibold text-dark-300">Date Created</th>
+                <tr className="border-b border-gray-200 dark:border-dark-700/50">
+                  <th className="py-3 px-4 text-sm font-semibold text-gray-700 dark:text-dark-300">Title / Item</th>
+                  <th className="py-3 px-4 text-sm font-semibold text-gray-700 dark:text-dark-300">Status</th>
+                  <th className="py-3 px-4 text-sm font-semibold text-gray-700 dark:text-dark-300">Date Created</th>
                 </tr>
               </thead>
               <tbody>
                 {data.map((item, idx) => (
-                  <tr key={item._id || idx} className="border-b border-dark-800/50 hover:bg-dark-800/20 transition">
+                  <tr key={item._id || idx} className="border-b border-gray-300 dark:border-dark-800/50 hover:bg-dark-800/20 transition">
                     <td className="py-3 px-4">
-                      <p className="text-sm font-medium text-dark-100">{item.title || item.foodNeeded || 'Delivery Task'}</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-dark-300 leading-relaxed">{item.title || item.foodNeeded || 'Delivery Task'}</p>
                       {(item.quantity || item.urgency) && (
-                         <p className="text-xs text-dark-400">Info: {item.quantity || item.urgency}</p>
+                         <p className="text-xs text-gray-700 dark:text-dark-300 leading-relaxed">Info: {item.quantity || item.urgency}</p>
                       )}
                     </td>
                     <td className="py-3 px-4">
                       <StatusBadge status={item.status || item.currentStatus || 'pending'} />
                     </td>
-                    <td className="py-3 px-4 text-sm text-dark-400">
+                    <td className="py-3 px-4 text-sm text-gray-500 dark:text-dark-400">
                       {new Date(item.createdAt).toLocaleDateString()}
                     </td>
                   </tr>

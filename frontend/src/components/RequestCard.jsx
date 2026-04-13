@@ -38,7 +38,7 @@ export default function RequestCard({
       className={`relative rounded-xl border transition-all duration-300 hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 ${
         isRecommended
           ? 'border-primary-500/40 bg-gradient-to-br from-primary-500/5 to-primary-600/10 ring-1 ring-primary-500/20'
-          : 'border-dark-700/30 bg-dark-800/30'
+          : 'border-gray-200 dark:border-dark-700/30 bg-white dark:bg-dark-800/30'
       }`}
     >
       {/* Recommended Badge */}
@@ -53,8 +53,8 @@ export default function RequestCard({
         {/* Header Row */}
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1 min-w-0">
-            <h4 className="text-sm font-semibold text-dark-900 dark:text-dark-100 truncate">{donation.title}</h4>
-            <p className="text-xs text-dark-400 mt-0.5">
+            <h4 className="text-sm truncate text-gray-900 dark:text-dark-50 font-bold tracking-tight">{donation.title}</h4>
+            <p className="text-xs mt-0.5 text-gray-700 dark:text-dark-300 leading-relaxed">
               Qty: {donation.quantity} • {timeAgo(donation.createdAt)}
             </p>
           </div>
@@ -72,12 +72,12 @@ export default function RequestCard({
               <MapPin size={11} className="text-green-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-[10px] uppercase tracking-wide text-dark-500 font-medium">Pickup</p>
-              <p className="text-xs text-dark-200 truncate">
+              <p className="text-[10px] uppercase tracking-wide font-medium text-gray-700 dark:text-dark-300 leading-relaxed">Pickup</p>
+              <p className="text-xs truncate text-gray-700 dark:text-dark-300 leading-relaxed">
                 {donation.donor?.name || donation.donorId?.name || 'Donor'}
                 {donation.pickupLocation?.address ? ` — ${donation.pickupLocation.address}` : ''}
               </p>
-              <p className="text-[10px] text-primary-400 font-medium">{pickupDistance} km away</p>
+              <p className="text-[10px] text-primary-400 font-medium text-gray-700 dark:text-dark-300 leading-relaxed">{pickupDistance} km away</p>
             </div>
           </div>
 
@@ -88,30 +88,30 @@ export default function RequestCard({
                 <Navigation size={11} className="text-red-400" />
               </div>
               <div className="min-w-0">
-                <p className="text-[10px] uppercase tracking-wide text-dark-500 font-medium">Deliver to</p>
-                <p className="text-xs text-dark-200 truncate">
+                <p className="text-[10px] uppercase tracking-wide font-medium text-gray-700 dark:text-dark-300 leading-relaxed">Deliver to</p>
+                <p className="text-xs truncate text-gray-700 dark:text-dark-300 leading-relaxed">
                   {matchedRequest.ngo?.name || matchedRequest.ngoId?.name || 'NGO'}
                   {matchedRequest.foodNeeded ? ` — needs "${matchedRequest.foodNeeded}"` : ''}
                 </p>
-                <p className="text-[10px] text-primary-400 font-medium">{deliveryDistance} km from pickup</p>
+                <p className="text-[10px] text-primary-400 font-medium text-gray-700 dark:text-dark-300 leading-relaxed">{deliveryDistance} km from pickup</p>
               </div>
             </div>
           )}
         </div>
 
         {/* Stats Row */}
-        <div className="flex items-center gap-3 bg-dark-800/50 rounded-lg px-3 py-2 mb-3">
-          <div className="flex items-center gap-1 text-[11px] text-dark-300">
+        <div className="flex items-center gap-3 bg-white dark:bg-dark-800/50 rounded-lg px-3 py-2 mb-3">
+          <div className="flex items-center gap-1 text-[11px] text-gray-700 dark:text-dark-300">
             <MapPin size={11} className="text-primary-400" />
             <span>{totalDistance} km total</span>
           </div>
           <div className="w-px h-3 bg-dark-700"></div>
-          <div className="flex items-center gap-1 text-[11px] text-dark-300">
+          <div className="flex items-center gap-1 text-[11px] text-gray-700 dark:text-dark-300">
             <Clock size={11} className="text-primary-400" />
             <span>~{estimatedTime} min</span>
           </div>
           <div className="w-px h-3 bg-dark-700"></div>
-          <div className="flex items-center gap-1 text-[11px] text-dark-300">
+          <div className="flex items-center gap-1 text-[11px] text-gray-700 dark:text-dark-300">
             <AlertTriangle size={11} className="text-orange-400" />
             <span>{expiresIn(donation.expiryTime)}</span>
           </div>
@@ -133,7 +133,7 @@ export default function RequestCard({
           {onShowRoute && (
             <button
               onClick={() => onShowRoute(item)}
-              className="px-3 py-2.5 text-sm font-medium rounded-xl bg-dark-700/50 hover:bg-dark-700 text-dark-300 hover:text-dark-100 border border-dark-600/30 transition-all"
+              className="px-3 py-2.5 text-sm font-medium rounded-xl bg-dark-700/50 hover:bg-dark-700 text-gray-700 dark:text-dark-300 hover:text-dark-100 border border-dark-600/30 transition-all"
               title="Preview route on map"
             >
               🗺️

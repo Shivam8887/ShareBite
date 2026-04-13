@@ -45,34 +45,34 @@ export default function LandingPage() {
 
       {/* ================= PROBLEM ================= */}
       <section className="max-w-7xl mx-auto px-6 py-24 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-6">
+        <h2 className="text-3xl md:text-4xl mb-6 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
           The Problem We’re Solving
         </h2>
 
-        <p className="text-dark-300 max-w-3xl mx-auto text-lg leading-relaxed">
+        <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-dark-300 leading-relaxed">
           Every day, restaurants, events, and households generate large amounts of surplus food that goes to waste. 
           At the same time, millions of people struggle to find even a single meal. The issue is not the lack of food, 
           but the lack of a real-time system that connects food donors with those who need it.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 mt-16">
-          <div className="glass p-6 rounded-2xl">
-            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-2">Food Waste</h3>
-            <p className="text-dark-400">
+          <div className="glass p-6 rounded-2xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+            <h3 className="text-xl mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Food Waste</h3>
+            <p className="text-gray-600 dark:text-dark-300 leading-relaxed">
               Large quantities of perfectly edible food are discarded daily due to lack of distribution channels and awareness.
             </p>
           </div>
 
-          <div className="glass p-6 rounded-2xl">
-            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-2">Hunger</h3>
-            <p className="text-dark-400">
+          <div className="glass p-6 rounded-2xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+            <h3 className="text-xl mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Hunger</h3>
+            <p className="text-gray-600 dark:text-dark-300 leading-relaxed">
               Millions of underprivileged people struggle with hunger and malnutrition despite food being available elsewhere.
             </p>
           </div>
 
-          <div className="glass p-6 rounded-2xl">
-            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-2">No Connection</h3>
-            <p className="text-dark-400">
+          <div className="glass p-6 rounded-2xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+            <h3 className="text-xl mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">No Connection</h3>
+            <p className="text-gray-600 dark:text-dark-300 leading-relaxed">
               There is no efficient real-time system to connect donors, NGOs, and volunteers in a seamless way.
             </p>
           </div>
@@ -80,36 +80,36 @@ export default function LandingPage() {
       </section>
 
       {/* ================= SOLUTION ================= */}
-      <section className="bg-dark-900/50 py-24">
+      <section className="bg-gray-50 dark:bg-dark-900/50 py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl mb-6 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
             Our Solution
           </h2>
 
-          <p className="text-dark-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="max-w-3xl mx-auto mb-12 text-gray-600 dark:text-dark-300 leading-relaxed">
             ShareBite is a smart platform that bridges the gap between surplus food and hunger. 
             By using real-time location tracking, intelligent matching, and a strong volunteer network, 
             we ensure that excess food reaches the right people quickly and efficiently.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass p-6 rounded-2xl">
-              <h3 className="text-dark-900 dark:text-white font-semibold text-lg mb-2">Smart Matching</h3>
-              <p className="text-dark-400">
+            <div className="glass p-6 rounded-2xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+              <h3 className="text-lg mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Smart Matching</h3>
+              <p className="text-gray-600 dark:text-dark-300 leading-relaxed">
                 Automatically connects donors with the nearest NGOs and available volunteers using location-based technology.
               </p>
             </div>
 
-            <div className="glass p-6 rounded-2xl">
-              <h3 className="text-dark-900 dark:text-white font-semibold text-lg mb-2">Fast Delivery</h3>
-              <p className="text-dark-400">
+            <div className="glass p-6 rounded-2xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+              <h3 className="text-lg mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Fast Delivery</h3>
+              <p className="text-gray-600 dark:text-dark-300 leading-relaxed">
                 Volunteers pick up food quickly and deliver it efficiently, reducing spoilage and ensuring timely distribution.
               </p>
             </div>
 
-            <div className="glass p-6 rounded-2xl">
-              <h3 className="text-dark-900 dark:text-white font-semibold text-lg mb-2">Full Transparency</h3>
-              <p className="text-dark-400">
+            <div className="glass p-6 rounded-2xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+              <h3 className="text-lg mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Full Transparency</h3>
+              <p className="text-gray-600 dark:text-dark-300 leading-relaxed">
                 Real-time tracking allows all users to monitor the journey of donations from pickup to delivery.
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function LandingPage() {
       </section>
 
       {/* ================= STATS ================= */}
-      <section className="border-y border-dark-800 bg-dark-900/50">
+      <section className="border-y border-gray-200 dark:border-dark-800 bg-gray-50 dark:bg-dark-900/50">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -129,14 +129,14 @@ export default function LandingPage() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl font-bold text-white">{stat.value}</div>
-                <div className="text-dark-400 text-sm uppercase">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 dark:text-dark-50">{stat.value}</div>
+                <div className="text-gray-500 dark:text-dark-400 text-sm uppercase">{stat.label}</div>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center mt-8">
-            <Link to="/impact" className="text-primary-400 hover:text-primary-300">
+            <Link to="/impact" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">
               View Full Impact →
             </Link>
           </div>
@@ -145,44 +145,44 @@ export default function LandingPage() {
 
       {/* ================= FEATURES ================= */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <h2 className="text-3xl font-bold text-dark-900 dark:text-white text-center mb-16">
+        <h2 className="text-3xl text-center mb-16 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
           Key Features
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((f, i) => (
-            <div key={i} className="glass p-8 rounded-3xl">
+            <div key={i} className="glass p-8 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
               <div className="mb-4">{f.icon}</div>
-              <h3 className="text-dark-900 dark:text-white text-xl font-bold mb-2">{f.title}</h3>
-              <p className="text-dark-400 leading-relaxed">{f.desc}</p>
+              <h3 className="text-xl mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">{f.title}</h3>
+              <p className="text-gray-600 dark:text-dark-300 leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>
       </section>
       {/* ================= USERS ================= */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <h2 className="text-3xl font-bold text-dark-900 dark:text-white text-center mb-16">
+        <h2 className="text-3xl text-center mb-16 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
           Who Can Use ShareBite?
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 text-center">
-          <div className="glass p-8 rounded-3xl">
-            <h3 className="text-dark-900 dark:text-white text-xl font-bold">Restaurants</h3>
-            <p className="text-dark-400 mt-2">
+          <div className="glass p-8 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+            <h3 className="text-xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">Restaurants</h3>
+            <p className="mt-2 text-gray-600 dark:text-dark-300 leading-relaxed">
               Easily donate surplus food instead of wasting it, while contributing to a meaningful cause.
             </p>
           </div>
 
-          <div className="glass p-8 rounded-3xl">
-            <h3 className="text-dark-900 dark:text-white text-xl font-bold">NGOs</h3>
-            <p className="text-dark-400 mt-2">
+          <div className="glass p-8 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+            <h3 className="text-xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">NGOs</h3>
+            <p className="mt-2 text-gray-600 dark:text-dark-300 leading-relaxed">
               Receive food donations efficiently and distribute them to communities in need.
             </p>
           </div>
 
-          <div className="glass p-8 rounded-3xl">
-            <h3 className="text-dark-900 dark:text-white text-xl font-bold">Volunteers</h3>
-            <p className="text-dark-400 mt-2">
+          <div className="glass p-8 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
+            <h3 className="text-xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">Volunteers</h3>
+            <p className="mt-2 text-gray-600 dark:text-dark-300 leading-relaxed">
               Join as a volunteer and help bridge the gap by picking up and delivering food.
             </p>
           </div>
@@ -191,12 +191,12 @@ export default function LandingPage() {
 
       {/* ================= CTA ================= */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
-        <div className="glass p-16 rounded-3xl text-center border border-primary-500/20">
-          <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-6">
+        <div className="glass p-16 rounded-3xl text-center border border-primary-500/20 bg-white/50 dark:bg-transparent">
+          <h2 className="text-4xl mb-6 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
             Ready to Make an Impact?
           </h2>
 
-          <p className="text-dark-300 mb-10">
+          <p className="mb-10 text-gray-600 dark:text-dark-300 leading-relaxed">
             Join ShareBite today and become a part of a growing movement to reduce food waste 
             and fight hunger through technology and community collaboration.
           </p>

@@ -125,7 +125,7 @@ export default function MapView({
     center.lat && center.lng ? [center.lat, center.lng] : [FALLBACK.lat, FALLBACK.lng];
 
   return (
-    <div className={`rounded-xl overflow-hidden border border-dark-700/50 ${className}`}>
+    <div className={`rounded-xl overflow-hidden border border-gray-200 dark:border-dark-700/50 ${className}`}>
       <MapContainer center={validCenter} zoom={zoom} className="w-full h-full" style={{ minHeight: '350px' }}>
         {/* CartoDB Positron tile layer for cleaner UI */}
         <TileLayer

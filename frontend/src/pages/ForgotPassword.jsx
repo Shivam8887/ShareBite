@@ -34,8 +34,8 @@ export default function ForgotPassword() {
       <div className="relative w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold gradient-text mb-2">ShareBite</h1>
-          <p className="text-dark-400 text-sm">Connecting food donors with those in need</p>
+          <h1 className="text-4xl gradient-text mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">ShareBite</h1>
+          <p className="text-sm text-gray-700 dark:text-dark-300 leading-relaxed">Connecting food donors with those in need</p>
         </div>
 
         {/* Form Card */}
@@ -49,8 +49,8 @@ export default function ForgotPassword() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
                   </svg>
                 </div>
-                <h2 className="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-3">Check your email</h2>
-                <p className="text-dark-400 text-sm mb-6 leading-relaxed">
+                <h2 className="text-xl mb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Check your email</h2>
+                <p className="text-sm mb-6 text-gray-700 dark:text-dark-300 leading-relaxed">
                   If an account exists with that email, a password reset link has been sent. Please check your inbox and spam folder.
                 </p>
                 <Link
@@ -63,19 +63,19 @@ export default function ForgotPassword() {
             </>
           ) : (
             <>
-              <h2 className="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2">Forgot your password?</h2>
-              <p className="text-dark-400 text-sm mb-6">
+              <h2 className="text-xl mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Forgot your password?</h2>
+              <p className="text-sm mb-6 text-gray-700 dark:text-dark-300 leading-relaxed">
                 No worries! Enter your email and we'll send you a reset link.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-medium text-dark-300 mb-1.5">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1.5">Email</label>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 bg-dark-900/50 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
                     placeholder="you@example.com"
                     required
                   />
@@ -95,7 +95,7 @@ export default function ForgotPassword() {
                 </button>
               </form>
 
-              <p className="text-center text-dark-400 text-sm mt-6">
+              <p className="text-center text-sm mt-6 text-gray-700 dark:text-dark-300 leading-relaxed">
                 Remember your password?{' '}
                 <Link to="/login" className="text-primary-400 hover:text-primary-300 font-medium">Sign in</Link>
               </p>

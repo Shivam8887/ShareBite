@@ -75,8 +75,8 @@ export default function DonorDashboard() {
           <div key={s.label} className={`bg-gradient-to-br ${s.color} border rounded-xl p-4 flex items-center gap-4`}>
             <span className="text-3xl">{s.icon}</span>
             <div>
-              <p className="text-2xl font-bold text-dark-100">{s.value}</p>
-              <p className="text-sm text-dark-400">{s.label}</p>
+              <p className="text-2xl font-bold text-gray-700 dark:text-dark-300 leading-relaxed">{s.value}</p>
+              <p className="text-sm text-gray-700 dark:text-dark-300 leading-relaxed">{s.label}</p>
             </div>
           </div>
         ))}
@@ -85,14 +85,14 @@ export default function DonorDashboard() {
       {/* Create Donation Button / Form */}
       <div className="glass rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100">
+          <h3 className="text-lg text-gray-900 dark:text-dark-50 font-bold tracking-tight">
             {showForm ? 'Create New Donation' : 'Your Donations'}
           </h3>
           <button
             onClick={() => setShowForm(!showForm)}
             className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
               showForm
-                ? 'bg-dark-800 text-dark-300 hover:bg-dark-700'
+                ? 'bg-white dark:bg-dark-800 text-gray-700 dark:text-dark-300 hover:bg-dark-700'
                 : 'bg-gradient-to-r from-primary-600 to-primary-500 text-white hover:from-primary-500 hover:to-primary-400 shadow-lg shadow-primary-500/20'
             }`}
           >
@@ -103,50 +103,50 @@ export default function DonorDashboard() {
         {showForm ? (
           <form onSubmit={handleCreate} className="space-y-4 max-w-lg">
             <div>
-              <label className="block text-sm font-medium text-dark-300 mb-1">Food Title</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1">Food Title</label>
               <input
                 type="text"
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
-                className="w-full px-4 py-3 bg-dark-900/50 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500"
+                className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500"
                 placeholder="e.g., 50 Roti packets"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-dark-300 mb-1">Description</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1">Description</label>
               <textarea
                 value={form.description}
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
-                className="w-full px-4 py-3 bg-dark-900/50 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 resize-none"
+                className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 resize-none"
                 placeholder="Additional details about the food..."
                 rows={3}
               />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-dark-300 mb-1">Quantity</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1">Quantity</label>
                 <input
                   type="text"
                   value={form.quantity}
                   onChange={(e) => setForm({ ...form, quantity: e.target.value })}
-                  className="w-full px-4 py-3 bg-dark-900/50 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500"
                   placeholder="e.g., 50 servings"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-dark-300 mb-1">Expiry Time</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1">Expiry Time</label>
                 <input
                   type="datetime-local"
                   value={form.expiryTime}
                   onChange={(e) => setForm({ ...form, expiryTime: e.target.value })}
-                  className="w-full px-4 py-3 bg-dark-900/50 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500"
                   required
                 />
               </div>
             </div>
-            <div className="flex items-center gap-2 text-sm text-dark-400">
+            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-dark-400">
               <span className="text-lg">📍</span>
               {position.lat ? (
                 <span>Location detected: {position.lat.toFixed(4)}, {position.lng.toFixed(4)}</span>
@@ -167,12 +167,12 @@ export default function DonorDashboard() {
             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary-400"></div>
           </div>
         ) : donations.length === 0 ? (
-          <p className="text-dark-500 text-center py-10">No donations yet. Create your first donation!</p>
+          <p className="text-center py-10 text-gray-700 dark:text-dark-300 leading-relaxed">No donations yet. Create your first donation!</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm min-w-[600px]">
               <thead>
-                <tr className="text-dark-400 border-b border-dark-700/50">
+                <tr className="text-gray-500 dark:text-dark-400 border-b border-gray-200 dark:border-dark-700/50">
                   <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Title</th>
                   <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Quantity</th>
                   <th className="text-left py-3 px-2 font-medium whitespace-nowrap">Expiry</th>
@@ -182,12 +182,12 @@ export default function DonorDashboard() {
               </thead>
               <tbody className="text-dark-200">
                 {donations.map((d) => (
-                  <tr key={d._id} className="border-b border-dark-800/50 hover:bg-dark-800/30">
+                  <tr key={d._id} className="border-b border-gray-300 dark:border-dark-800/50 hover:bg-dark-800/30">
                     <td className="py-3 px-2 font-medium">{d.title}</td>
                     <td className="py-3 px-2">{d.quantity}</td>
-                    <td className="py-3 px-2 text-dark-400">{new Date(d.expiryTime).toLocaleString()}</td>
+                    <td className="py-3 px-2 text-gray-500 dark:text-dark-400">{new Date(d.expiryTime).toLocaleString()}</td>
                     <td className="py-3 px-2"><StatusBadge status={d.status} /></td>
-                    <td className="py-3 px-2 text-dark-400">{d.assignedVolunteer?.name || '—'}</td>
+                    <td className="py-3 px-2 text-gray-500 dark:text-dark-400">{d.assignedVolunteer?.name || '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -198,7 +198,7 @@ export default function DonorDashboard() {
 
       {/* Map */}
       <div className="glass rounded-xl p-4">
-        <h3 className="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-3">Your Donations on Map</h3>
+        <h3 className="text-lg mb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Your Donations on Map</h3>
         <MapView
           center={position}
           donations={donations}

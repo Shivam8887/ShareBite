@@ -68,26 +68,26 @@ export default function ResetPassword() {
       <div className="relative w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold gradient-text mb-2">ShareBite</h1>
-          <p className="text-dark-400 text-sm">Connecting food donors with those in need</p>
+          <h1 className="text-4xl gradient-text mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">ShareBite</h1>
+          <p className="text-sm text-gray-700 dark:text-dark-300 leading-relaxed">Connecting food donors with those in need</p>
         </div>
 
         {/* Form Card */}
         <div className="glass rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2">Set new password</h2>
-          <p className="text-dark-400 text-sm mb-6">
+          <h2 className="text-xl mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Set new password</h2>
+          <p className="text-sm mb-6 text-gray-700 dark:text-dark-300 leading-relaxed">
             Choose a strong password for your account.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-dark-300 mb-1.5">New Password</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1.5">New Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 pr-12 bg-dark-900/50 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
+                  className="w-full px-4 py-3 pr-12 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
                   placeholder="••••••••"
                   required
                 />
@@ -125,17 +125,17 @@ export default function ResetPassword() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-dark-300 mb-1.5">Confirm Password</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1.5">Confirm Password</label>
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-dark-900/50 border border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
+                className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
                 placeholder="••••••••"
                 required
               />
               {confirmPassword && password !== confirmPassword && (
-                <p className="text-xs text-red-400 mt-1">Passwords do not match</p>
+                <p className="text-xs text-red-400 mt-1 text-gray-700 dark:text-dark-300 leading-relaxed">Passwords do not match</p>
               )}
             </div>
 
@@ -153,7 +153,7 @@ export default function ResetPassword() {
             </button>
           </form>
 
-          <p className="text-center text-dark-400 text-sm mt-6">
+          <p className="text-center text-sm mt-6 text-gray-700 dark:text-dark-300 leading-relaxed">
             <Link to="/login" className="text-primary-400 hover:text-primary-300 font-medium">Back to Login</Link>
           </p>
         </div>

@@ -73,7 +73,7 @@ export default function NavBar() {
             <Link 
               key={link.name} 
               to={link.path}
-              className="text-dark-300 hover:text-white text-sm font-medium transition-colors"
+              className="text-gray-700 dark:text-dark-300 hover:text-white text-sm font-medium transition-colors"
             >
               {link.name}
             </Link>
@@ -86,14 +86,14 @@ export default function NavBar() {
           <div className="relative" ref={themeDropdownRef}>
             <button 
               onClick={() => setIsThemeDropdownOpen(!isThemeDropdownOpen)}
-              className="p-2 text-dark-300 hover:text-dark-100 hover:bg-dark-800/50 rounded-xl transition-all flex items-center gap-2"
+              className="p-2 text-gray-700 dark:text-dark-300 hover:text-dark-100 hover:bg-dark-800/50 rounded-xl transition-all flex items-center gap-2"
               title="Change Theme"
             >
               <activeTheme.icon className="w-5 h-5 text-primary-400 transform transition-transform duration-300 hover:rotate-12" />
             </button>
             
             {isThemeDropdownOpen && (
-              <div className="absolute top-full right-0 mt-2 w-48 glass rounded-xl border border-dark-700/50 shadow-xl overflow-hidden py-1 z-50">
+              <div className="absolute top-full right-0 mt-2 w-48 glass rounded-xl border border-gray-200 dark:border-dark-700/50 shadow-xl overflow-hidden py-1 z-50">
                 {themes.map((t) => (
                   <button
                     key={t.id}
@@ -101,7 +101,7 @@ export default function NavBar() {
                     className={`w-full text-left px-4 py-2 text-sm flex items-center gap-3 transition-colors ${
                       theme === t.id 
                         ? 'bg-primary-500/20 text-primary-400 font-medium' 
-                        : 'text-dark-300 hover:bg-dark-800 hover:text-dark-100'
+                        : 'text-gray-700 dark:text-dark-300 hover:bg-dark-800 hover:text-dark-100'
                     }`}
                   >
                     <t.icon className="w-4 h-4" />
@@ -122,7 +122,7 @@ export default function NavBar() {
               </Link>
               <button
                 onClick={logout}
-                className="px-4 py-2 text-sm font-medium text-white bg-dark-800 hover:bg-dark-700 rounded-full border border-dark-700 transition-all"
+                className="px-4 py-2 text-sm font-medium text-white bg-white dark:bg-dark-800 hover:bg-dark-700 rounded-full border border-gray-200 dark:border-dark-700 transition-all"
               >
                 Logout
               </button>
@@ -131,7 +131,7 @@ export default function NavBar() {
             <>
               <Link 
                 to="/login"
-                className="text-sm font-medium text-dark-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-gray-700 dark:text-dark-300 hover:text-white transition-colors"
               >
                 Log In
               </Link>
@@ -147,7 +147,7 @@ export default function NavBar() {
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden p-2 text-dark-300 hover:text-white"
+          className="md:hidden p-2 text-gray-700 dark:text-dark-300 hover:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -156,12 +156,12 @@ export default function NavBar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-dark-700/50 py-4 px-6 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-gray-200 dark:border-dark-700/50 py-4 px-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               to={link.path}
-              className="text-dark-300 hover:text-white text-lg font-medium transition-colors py-2"
+              className="text-gray-700 dark:text-dark-300 hover:text-white text-lg font-medium transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -171,7 +171,7 @@ export default function NavBar() {
           
           {/* Theme Options for Mobile */}
           <div className="py-2">
-            <span className="text-sm text-dark-400 font-medium px-2 uppercase tracking-wider">Theme</span>
+            <span className="text-sm text-gray-500 dark:text-dark-400 font-medium px-2 uppercase tracking-wider">Theme</span>
             <div className="flex flex-wrap gap-2 mt-2 px-2">
               {themes.map((t) => (
                 <button
@@ -180,7 +180,7 @@ export default function NavBar() {
                   className={`p-2 rounded-xl border transition-all flex items-center gap-2 ${
                     theme === t.id 
                       ? 'bg-primary-500/20 border-primary-500/50 text-primary-400' 
-                      : 'bg-dark-800/50 border-dark-700/50 text-dark-300 hover:bg-dark-800'
+                      : 'bg-white dark:bg-dark-800/50 border-gray-200 dark:border-dark-700/50 text-gray-700 dark:text-dark-300 hover:bg-dark-800'
                   }`}
                   title={t.name}
                 >
@@ -206,7 +206,7 @@ export default function NavBar() {
                   logout();
                   setIsMobileMenuOpen(false);
                 }}
-                className="text-left text-dark-300 font-medium py-2"
+                className="text-left text-gray-700 dark:text-dark-300 font-medium py-2"
               >
                 Logout
               </button>
@@ -215,7 +215,7 @@ export default function NavBar() {
             <>
               <Link 
                 to="/login"
-                className="text-dark-300 font-medium py-2"
+                className="text-gray-700 dark:text-dark-300 font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Log In
