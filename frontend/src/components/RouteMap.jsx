@@ -142,7 +142,7 @@ export default function RouteMap({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="rounded-xl overflow-hidden border border-dark-700/50 h-full">
+      <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-dark-700/50 h-full">
         <MapContainer center={center} zoom={13} className="w-full h-full" style={{ minHeight: '350px' }}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'

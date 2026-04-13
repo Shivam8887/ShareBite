@@ -103,8 +103,8 @@ export default function MapPage() {
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h2 className="text-2xl font-bold text-dark-900 dark:text-white mb-1">Live Map</h2>
-          <p className="text-dark-400 text-sm">
+          <h2 className="text-2xl mb-1 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Live Map</h2>
+          <p className="text-sm text-gray-700 dark:text-dark-300 leading-relaxed">
             Real-time view of nearby donations, requests, and volunteers
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function MapPage() {
           </button>
           <button
             onClick={fetchMapData}
-            className="px-3 py-1.5 text-xs font-medium text-dark-300 hover:text-white border border-dark-700 hover:border-primary-500/50 rounded-lg transition-colors"
+            className="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-dark-300 hover:text-white border border-gray-200 dark:border-dark-700 hover:border-primary-500/50 rounded-lg transition-colors"
           >
             Refresh
           </button>
@@ -167,7 +167,7 @@ export default function MapPage() {
       )}
 
       {/* Map Container */}
-      <div className="flex-1 bg-dark-900 rounded-xl overflow-hidden border border-dark-700/50 shadow-2xl relative">
+      <div className="flex-1 bg-gray-50 dark:bg-dark-900 rounded-xl overflow-hidden border border-gray-200 dark:border-dark-700/50 shadow-2xl relative">
         <MapView
           center={center}
           userPosition={!usingFallback && position.lat !== null ? position : null}
@@ -181,36 +181,36 @@ export default function MapPage() {
 
         {/* Stats Bar */}
         <div className="absolute top-4 left-4 z-[400] flex gap-2">
-          <div className="bg-dark-900/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-dark-700/50 text-xs text-dark-300">
+          <div className="bg-gray-50 dark:bg-dark-900/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-200 dark:border-dark-700/50 text-xs text-gray-700 dark:text-dark-300">
             <span className="text-green-400 font-bold">{mapData.donations.length}</span> Donations
           </div>
-          <div className="bg-dark-900/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-dark-700/50 text-xs text-dark-300">
+          <div className="bg-gray-50 dark:bg-dark-900/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-200 dark:border-dark-700/50 text-xs text-gray-700 dark:text-dark-300">
             <span className="text-red-400 font-bold">{mapData.requests.length}</span> Requests
           </div>
-          <div className="bg-dark-900/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-dark-700/50 text-xs text-dark-300">
+          <div className="bg-gray-50 dark:bg-dark-900/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-200 dark:border-dark-700/50 text-xs text-gray-700 dark:text-dark-300">
             <span className="text-orange-400 font-bold">{mapData.volunteers.length}</span> Volunteers
           </div>
         </div>
 
         {/* Legend */}
-        <div className="absolute bottom-6 right-6 z-[400] bg-dark-900/90 backdrop-blur-md p-4 rounded-xl border border-dark-700/50 shadow-xl">
-          <h4 className="text-dark-900 dark:text-white font-semibold text-sm mb-3">Legend</h4>
+        <div className="absolute bottom-6 right-6 z-[400] bg-gray-50 dark:bg-dark-900/90 backdrop-blur-md p-4 rounded-xl border border-gray-200 dark:border-dark-700/50 shadow-xl">
+          <h4 className="text-sm mb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Legend</h4>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-blue-500"></span>
-              <span className="text-sm text-dark-300">Your Location</span>
+              <span className="text-sm text-gray-700 dark:text-dark-300">Your Location</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-green-500"></span>
-              <span className="text-sm text-dark-300">Donor (Available Food)</span>
+              <span className="text-sm text-gray-700 dark:text-dark-300">Donor (Available Food)</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-orange-500"></span>
-              <span className="text-sm text-dark-300">Volunteer (Active)</span>
+              <span className="text-sm text-gray-700 dark:text-dark-300">Volunteer (Active)</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-red-500"></span>
-              <span className="text-sm text-dark-300">NGO Request (Food Needed)</span>
+              <span className="text-sm text-gray-700 dark:text-dark-300">NGO Request (Food Needed)</span>
             </div>
           </div>
         </div>

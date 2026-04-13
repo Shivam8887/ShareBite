@@ -39,7 +39,7 @@ export default function AboutUs() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-extrabold text-white tracking-tight"
+            className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-50 tracking-tight"
           >
             About <span className="bg-gradient-to-r from-primary-400 to-primary-200 bg-clip-text text-transparent">ShareBite</span>
           </motion.h1>
@@ -47,7 +47,7 @@ export default function AboutUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-dark-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-600 dark:text-dark-300 max-w-3xl mx-auto leading-relaxed"
           >
             We are on a mission to bridge the gap between food surplus and food scarcity, empowering communities to share resources seamlessly and sustainably.
           </motion.p>
@@ -61,8 +61,8 @@ export default function AboutUs() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-3xl font-bold text-dark-900 dark:text-white">Our Story</h2>
-            <div className="space-y-4 text-dark-300 leading-relaxed text-lg">
+            <h2 className="text-3xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">Our Story</h2>
+            <div className="space-y-4 text-gray-700 dark:text-dark-300 leading-relaxed text-lg">
               <p>
                 ShareBite began with a simple observation: every day, massive amounts of perfectly good food are thrown away by restaurants, events, and households, while simultaneously, people in our very communities go to bed hungry.
               </p>
@@ -79,13 +79,13 @@ export default function AboutUs() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass p-8 rounded-3xl border border-dark-700/50 relative overflow-hidden"
+            className="glass p-8 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5"></div>
             <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-6 py-8">
               <ShieldCheck className="w-20 h-20 text-primary-400" />
-              <h3 className="text-2xl font-bold text-dark-900 dark:text-white">Share Food, Spread Hope.</h3>
-              <p className="text-dark-300">Join thousands of others in the movement against food waste.</p>
+              <h3 className="text-2xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">Share Food, Spread Hope.</h3>
+              <p className="text-gray-600 dark:text-dark-300 leading-relaxed">Join thousands of others in the movement against food waste.</p>
             </div>
           </motion.div>
         </section>
@@ -93,8 +93,8 @@ export default function AboutUs() {
         {/* Core Values Section */}
         <section className="space-y-12">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-dark-900 dark:text-white mb-4">Our Core Values</h2>
-            <p className="text-dark-400 max-w-2xl mx-auto">The principles that guide our platform, our team, and our wonderful community.</p>
+            <h2 className="text-3xl mb-4 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Our Core Values</h2>
+            <p className="max-w-2xl mx-auto text-gray-600 dark:text-dark-300 leading-relaxed">The principles that guide our platform, our team, and our wonderful community.</p>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -105,13 +105,13 @@ export default function AboutUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass p-6 rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all hover:-translate-y-1"
+                className="glass p-6 rounded-2xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent hover:border-primary-500/30 transition-all hover:-translate-y-1"
               >
-                <div className="w-16 h-16 bg-dark-800 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gray-100 dark:bg-dark-800 rounded-2xl flex items-center justify-center mb-6">
                   {v.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-dark-900 dark:text-white mb-3">{v.title}</h3>
-                <p className="text-dark-300 leading-relaxed text-sm">{v.desc}</p>
+                <h3 className="text-xl mb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">{v.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-dark-300 leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>

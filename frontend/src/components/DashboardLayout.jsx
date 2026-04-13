@@ -22,28 +22,28 @@ export default function DashboardLayout() {
 
       <div className="flex-1 flex flex-col min-h-screen md:ml-64 w-full max-w-[100vw]">
         {/* Top Bar */}
-        <header className="sticky top-0 z-10 glass border-b border-dark-700/50 px-4 md:px-6 py-3 flex items-center justify-between">
+        <header className="sticky top-0 z-10 glass border-b border-gray-200 dark:border-dark-700/50 px-4 md:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button 
-              className="md:hidden p-1.5 text-dark-300 hover:text-white bg-dark-800 rounded-lg transition-colors border border-dark-700/50"
+              className="md:hidden p-1.5 text-gray-700 dark:text-dark-300 hover:text-white bg-white dark:bg-dark-800 rounded-lg transition-colors border border-gray-200 dark:border-dark-700/50"
               onClick={() => setIsSidebarOpen(true)}
             >
               <Menu size={20} />
             </button>
-            <h2 className="text-lg font-semibold text-dark-900 dark:text-dark-100 capitalize hidden sm:block">{user?.role} Dashboard</h2>
-            <h2 className="text-lg font-semibold text-dark-900 dark:text-dark-100 capitalize sm:hidden">Dashboard</h2>
+            <h2 className="text-lg capitalize hidden sm:block text-gray-900 dark:text-dark-50 font-bold tracking-tight">{user?.role} Dashboard</h2>
+            <h2 className="text-lg capitalize sm:hidden text-gray-900 dark:text-dark-50 font-bold tracking-tight">Dashboard</h2>
           </div>
           <div className="flex items-center gap-3 md:gap-4">
             <div className="text-right hidden sm:block">
-              <p className="text-sm font-medium text-dark-200">{user?.name}</p>
-              <p className="text-xs text-dark-400">{user?.email}</p>
+              <p className="text-sm font-medium text-gray-700 dark:text-dark-300 leading-relaxed">{user?.name}</p>
+              <p className="text-xs text-gray-700 dark:text-dark-300 leading-relaxed">{user?.email}</p>
             </div>
             <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-xs md:text-sm">
               {user?.name?.charAt(0)?.toUpperCase()}
             </div>
             <button
               onClick={logout}
-              className="px-2 md:px-3 py-1.5 text-xs font-medium text-dark-300 hover:text-red-400 border border-dark-700 hover:border-red-500/50 rounded-lg transition-colors"
+              className="px-2 md:px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-dark-300 hover:text-red-400 border border-gray-200 dark:border-dark-700 hover:border-red-500/50 rounded-lg transition-colors"
             >
               Logout
             </button>

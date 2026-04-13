@@ -63,7 +63,7 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-dark-300 max-w-2xl mx-auto"
+            className="text-lg text-gray-700 dark:text-dark-300 max-w-2xl mx-auto"
           >
             We've streamlined the donation process to make sharing surplus food as easy as ordering a meal online.
           </motion.p>
@@ -83,7 +83,7 @@ export default function HowItWorks() {
 
               {/* IMAGE SECTION */}
               <div className="flex-1 w-full">
-                <div className="relative rounded-3xl overflow-hidden border border-dark-700/50 group">
+                <div className="relative rounded-3xl overflow-hidden border border-gray-200 dark:border-dark-700/50 group">
 
                   {/* Image */}
                   <img
@@ -105,9 +105,9 @@ export default function HowItWorks() {
 
               {/* TEXT SECTION */}
               <div className="flex-1 space-y-6">
-                <h2 className="text-3xl font-bold text-dark-900 dark:text-white">{step.title}</h2>
+                <h2 className="text-3xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">{step.title}</h2>
 
-                <p className="text-dark-300 text-lg leading-relaxed">
+                <p className="text-lg text-gray-700 dark:text-dark-300 leading-relaxed">
                   {step.desc}
                 </p>
 
@@ -136,11 +136,11 @@ export default function HowItWorks() {
           <div className="relative z-10">
             <HeartPulse className="w-12 h-12 text-primary-400 mx-auto mb-6" />
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl mb-6 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
               Start Your Journey Today
             </h2>
 
-            <p className="text-dark-300 mb-8 max-w-xl mx-auto">
+            <p className="mb-8 max-w-xl mx-auto text-gray-700 dark:text-dark-300 leading-relaxed">
               Join ShareBite and help bridge the gap between surplus food and those in need.
             </p>
 
@@ -152,7 +152,7 @@ export default function HowItWorks() {
               </Link>
 
               <Link to="/signup">
-                <button className="px-8 py-4 bg-dark-800 hover:bg-dark-700 text-white rounded-full border border-dark-700">
+                <button className="px-8 py-4 bg-white dark:bg-dark-800 hover:bg-dark-700 text-white rounded-full border border-gray-200 dark:border-dark-700">
                   Donate Food
                 </button>
               </Link>
