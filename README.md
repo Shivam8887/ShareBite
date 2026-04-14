@@ -2,6 +2,7 @@
 
 ShareBite is a food donation platform built to connect donors, NGOs, and volunteers for real-time food delivery.
 
+ShareBite Live - <a href="https://sharebite-sigma.vercel.app/" target="_blank">Click Here </a>
 ## 📁 Project Structure
 - **/frontend**: React + Vite application (UI/UX, Dashboards, Maps)
 - **/backend**: Express + Node.js server (API, Socket.io, MongoDB)
