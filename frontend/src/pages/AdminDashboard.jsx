@@ -82,15 +82,15 @@ export default function AdminDashboard() {
         ].map((s) => (
           <div key={s.label} className={`bg-gradient-to-br ${s.color} border rounded-xl p-3 text-center`}>
             <span className="text-2xl">{s.icon}</span>
-            <p className="text-xl font-bold mt-1 text-gray-700 dark:text-dark-300 leading-relaxed">{s.value}</p>
-            <p className="text-xs text-gray-700 dark:text-dark-300 leading-relaxed">{s.label}</p>
+            <p className="text-xl font-bold mt-1 text-gray-700 leading-relaxed">{s.value}</p>
+            <p className="text-xs text-gray-700 leading-relaxed">{s.label}</p>
           </div>
         ))}
       </div>
 
       {/* Map */}
-      <div className="glass rounded-xl p-4">
-        <h3 className="text-lg mb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">System Overview Map</h3>
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-soft p-4">
+        <h3 className="text-lg mb-3 text-gray-900 font-bold tracking-tight">System Overview Map</h3>
         <MapView
           center={position}
           donations={donations}
@@ -101,16 +101,16 @@ export default function AdminDashboard() {
       </div>
 
       {/* Tabs + Tables */}
-      <div className="glass rounded-xl">
-        <div className="flex border-b border-gray-200 dark:border-dark-700/50">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-soft">
+        <div className="flex border-b border-gray-200">
           {tabs.map((t) => (
             <button
               key={t.key}
               onClick={() => setActiveTab(t.key)}
               className={`flex-1 py-3 text-sm font-medium text-center transition-colors ${
                 activeTab === t.key
-                  ? 'text-primary-400 border-b-2 border-primary-500 bg-primary-500/5'
-                  : 'text-gray-500 dark:text-dark-400 hover:text-dark-200'
+                  ? 'text-green-600 border-b-2 border-green-500 bg-green-50'
+                  : 'text-gray-500 hover:text-slate-700'
               }`}
             >
               {t.label} <span className="ml-1 text-xs opacity-60">({t.count})</span>
@@ -122,7 +122,7 @@ export default function AdminDashboard() {
           {activeTab === 'donations' && (
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-gray-500 dark:text-dark-400 border-b border-gray-200 dark:border-dark-700/50">
+                <tr className="text-gray-500 border-b border-gray-200">
                   <th className="text-left py-2 px-2 font-medium">Title</th>
                   <th className="text-left py-2 px-2 font-medium">Donor</th>
                   <th className="text-left py-2 px-2 font-medium">Qty</th>
@@ -131,15 +131,15 @@ export default function AdminDashboard() {
                   <th className="text-left py-2 px-2 font-medium">Created</th>
                 </tr>
               </thead>
-              <tbody className="text-dark-200">
+              <tbody className="text-slate-700">
                 {donations.map((d) => (
-                  <tr key={d._id} className="border-b border-gray-300 dark:border-dark-800/50 hover:bg-dark-800/20">
+                  <tr key={d._id} className="border-b border-gray-300 hover:bg-slate-100/20">
                     <td className="py-2 px-2 font-medium">{d.title}</td>
-                    <td className="py-2 px-2 text-gray-500 dark:text-dark-400">{d.donorId?.name || '—'}</td>
+                    <td className="py-2 px-2 text-gray-500">{d.donorId?.name || '—'}</td>
                     <td className="py-2 px-2">{d.quantity}</td>
                     <td className="py-2 px-2"><StatusBadge status={d.status} /></td>
-                    <td className="py-2 px-2 text-gray-500 dark:text-dark-400">{d.assignedVolunteer?.name || '—'}</td>
-                    <td className="py-2 px-2 text-dark-500 text-xs">{new Date(d.createdAt).toLocaleDateString()}</td>
+                    <td className="py-2 px-2 text-gray-500">{d.assignedVolunteer?.name || '—'}</td>
+                    <td className="py-2 px-2 text-slate-400 text-xs">{new Date(d.createdAt).toLocaleDateString()}</td>
                   </tr>
                 ))}
               </tbody>
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
           {activeTab === 'requests' && (
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-gray-500 dark:text-dark-400 border-b border-gray-200 dark:border-dark-700/50">
+                <tr className="text-gray-500 border-b border-gray-200">
                   <th className="text-left py-2 px-2 font-medium">Food Needed</th>
                   <th className="text-left py-2 px-2 font-medium">NGO</th>
                   <th className="text-left py-2 px-2 font-medium">Urgency</th>
@@ -157,11 +157,11 @@ export default function AdminDashboard() {
                   <th className="text-left py-2 px-2 font-medium">Created</th>
                 </tr>
               </thead>
-              <tbody className="text-dark-200">
+              <tbody className="text-slate-700">
                 {requests.map((r) => (
-                  <tr key={r._id} className="border-b border-gray-300 dark:border-dark-800/50 hover:bg-dark-800/20">
+                  <tr key={r._id} className="border-b border-gray-300 hover:bg-slate-100/20">
                     <td className="py-2 px-2 font-medium">{r.foodNeeded}</td>
-                    <td className="py-2 px-2 text-gray-500 dark:text-dark-400">{r.ngoId?.name || '—'}</td>
+                    <td className="py-2 px-2 text-gray-500">{r.ngoId?.name || '—'}</td>
                     <td className="py-2 px-2">
                       <span className={`px-2 py-0.5 rounded text-xs font-medium ${
                         r.urgency === 'high' ? 'bg-red-500/20 text-red-400' :
@@ -170,7 +170,7 @@ export default function AdminDashboard() {
                       }`}>{r.urgency}</span>
                     </td>
                     <td className="py-2 px-2"><StatusBadge status={r.status} /></td>
-                    <td className="py-2 px-2 text-dark-500 text-xs">{new Date(r.createdAt).toLocaleDateString()}</td>
+                    <td className="py-2 px-2 text-slate-400 text-xs">{new Date(r.createdAt).toLocaleDateString()}</td>
                   </tr>
                 ))}
               </tbody>
@@ -180,7 +180,7 @@ export default function AdminDashboard() {
           {activeTab === 'deliveries' && (
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-gray-500 dark:text-dark-400 border-b border-gray-200 dark:border-dark-700/50">
+                <tr className="text-gray-500 border-b border-gray-200">
                   <th className="text-left py-2 px-2 font-medium">Donation</th>
                   <th className="text-left py-2 px-2 font-medium">Volunteer</th>
                   <th className="text-left py-2 px-2 font-medium">Status</th>
@@ -188,16 +188,16 @@ export default function AdminDashboard() {
                   <th className="text-left py-2 px-2 font-medium">Delivered</th>
                 </tr>
               </thead>
-              <tbody className="text-dark-200">
+              <tbody className="text-slate-700">
                 {deliveries.map((d) => (
-                  <tr key={d._id} className="border-b border-gray-300 dark:border-dark-800/50 hover:bg-dark-800/20">
+                  <tr key={d._id} className="border-b border-gray-300 hover:bg-slate-100/20">
                     <td className="py-2 px-2 font-medium">{d.donationId?.title || '—'}</td>
-                    <td className="py-2 px-2 text-gray-500 dark:text-dark-400">{d.volunteerId?.name || '—'}</td>
+                    <td className="py-2 px-2 text-gray-500">{d.volunteerId?.name || '—'}</td>
                     <td className="py-2 px-2"><StatusBadge status={d.currentStatus} /></td>
-                    <td className="py-2 px-2 text-dark-500 text-xs">
+                    <td className="py-2 px-2 text-slate-400 text-xs">
                       {d.statusTimeline?.accepted ? new Date(d.statusTimeline.accepted).toLocaleString() : '—'}
                     </td>
-                    <td className="py-2 px-2 text-dark-500 text-xs">
+                    <td className="py-2 px-2 text-slate-400 text-xs">
                       {d.statusTimeline?.delivered ? new Date(d.statusTimeline.delivered).toLocaleString() : '—'}
                     </td>
                   </tr>

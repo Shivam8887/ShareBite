@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
 @import 'leaflet/dist/leaflet.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base colors: dark theme */
+/* =========================================================
+   SHAREBITE — Light Theme Design System
+   Primary: #22C55E (green-500)
+   Secondary: #3B82F6 (blue-500)
+   Accent: #F59E0B (amber-500)
+   Background: #F8FAFC / #FFFFFF
+   ========================================================= */
+
 :root {
+  /* Primary green palette */
   --color-primary-50:  240 253 244;
   --color-primary-100: 220 252 231;
   --color-primary-200: 187 247 208;
@@ -17,125 +25,184 @@
   --color-primary-800: 22  101 52;
   --color-primary-900: 20  83  45;
 
-  --color-dark-50:  248 250 252;
-  --color-dark-100: 241 245 249;
-  --color-dark-200: 226 232 240;
-  --color-dark-300: 203 213 225;
-  --color-dark-400: 148 163 184;
-  --color-dark-500: 100 116 139;
-  --color-dark-600: 71  85  105;
-  --color-dark-700: 51  65  85;
-  --color-dark-800: 30  41  59;
-  --color-dark-900: 15  23  42;
-  --color-dark-950: 2   6   23;
-  --color-glass-border: 148 163 184;
-}
-
-/* Light Theme */
-.light {
-  --color-dark-950: 248 250 252;
-  --color-dark-900: 241 245 249;
-  --color-dark-800: 226 232 240;
-  --color-dark-700: 203 213 225;
-  --color-dark-600: 148 163 184;
-  --color-dark-500: 100 116 139;
-  --color-dark-400: 71  85  105;
-  --color-dark-300: 51  65  85;
-  --color-dark-200: 30  41  59;
-  --color-dark-100: 15  23  42;
+  /* Neutral / slate (replaces dark palette) — light direction */
   --color-dark-50:  2   6   23;
-  --color-glass-border: 0 0 0;
+  --color-dark-100: 15  23  42;
+  --color-dark-200: 30  41  59;
+  --color-dark-300: 51  65  85;
+  --color-dark-400: 71  85  105;
+  --color-dark-500: 100 116 139;
+  --color-dark-600: 148 163 184;
+  --color-dark-700: 203 213 225;
+  --color-dark-800: 226 232 240;
+  --color-dark-900: 241 245 249;
+  --color-dark-950: 248 250 252;
+
+  /* Glass border for light mode */
+  --color-glass-border: 203 213 225;
+
+  /* Design tokens */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
+  --shadow-green: 0 4px 20px rgba(34,197,94,0.25);
 }
 
-/* Blue Theme */
-.blue {
-  --color-primary-50:  239 246 255;
-  --color-primary-100: 219 234 254;
-  --color-primary-200: 191 219 254;
-  --color-primary-300: 147 197 253;
-  --color-primary-400: 96  165 250;
-  --color-primary-500: 59  130 246;
-  --color-primary-600: 37  99  235;
-  --color-primary-700: 29  78  216;
-  --color-primary-800: 30  64  175;
-  --color-primary-900: 30  58  138;
-}
+/* =========================================================
+   BASE
+   ========================================================= */
 
-/* Green Theme */
-.green {
-  /* Green uses the same default primary and dark variables */
-}
-
-/* High Contrast Theme */
-.high-contrast {
-  --color-primary-50:  255 255 0;
-  --color-primary-100: 255 255 0;
-  --color-primary-200: 255 255 0;
-  --color-primary-300: 255 255 0;
-  --color-primary-400: 255 255 0;
-  --color-primary-500: 255 255 0;
-  --color-primary-600: 204 204 0;
-  --color-primary-700: 153 153 0;
-  --color-primary-800: 102 102 0;
-  --color-primary-900: 51  51  0;
-
-  --color-dark-950: 0 0 0;
-  --color-dark-900: 0 0 0;
-  --color-dark-800: 0 0 0;
-  --color-dark-700: 32 32 32;
-  --color-dark-600: 64 64 64;
-  --color-dark-500: 96 96 96;
-  --color-dark-400: 128 128 128;
-  --color-dark-300: 255 255 255;
-  --color-dark-200: 255 255 255;
-  --color-dark-100: 255 255 255;
-  --color-dark-50:  255 255 255;
-  --color-glass-border: 255 255 255;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: rgb(var(--color-dark-900));
-  color: rgb(var(--color-dark-300));
+  background-color: #F8FAFC;
+  color: #475569;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-/* Leaflet fixes */
+
+/* =========================================================
+   LEAFLET FIXES
+   ========================================================= */
 .leaflet-container { width: 100%; height: 100%; z-index: 0; }
 
-/* Custom scrollbar */
+/* =========================================================
+   CUSTOM SCROLLBAR (light)
+   ========================================================= */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #1e293b; }
-::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #64748b; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
 
-/* Smooth transitions */
-* { transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
-
-/* Glass effect utility */
-.glass {
-  background: rgb(var(--color-dark-900) / 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgb(var(--color-glass-border) / 0.1);
+/* =========================================================
+   SMOOTH TRANSITIONS
+   ========================================================= */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Gradient text */
+/* =========================================================
+   GLASSMORPHISM (light mode)
+   ========================================================= */
+.glass {
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(203, 213, 225, 0.6);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   GRADIENT TEXT
+   ========================================================= */
 .gradient-text {
-  background: linear-gradient(135deg, #22c55e, #4ade80, #86efac);
+  background: linear-gradient(135deg, #16A34A, #22C55E, #4ADE80);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Pulse animation for live tracking */
+/* =========================================================
+   CARD HOVER LIFT
+   ========================================================= */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all duration-200;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-slate-200 text-slate-600 hover:border-green-500 hover:text-green-600 font-medium rounded-xl transition-all duration-200 bg-white;
+}
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+.input-field {
+  @apply w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all duration-200;
+}
+
+/* =========================================================
+   SECTION STYLES
+   ========================================================= */
+.section-light {
+  background: #FFFFFF;
+}
+.section-gray {
+  background: #F8FAFC;
+}
+.section-gradient {
+  background: linear-gradient(135deg, #F0FDF4 0%, #EFF6FF 100%);
+}
+
+/* =========================================================
+   STATUS BADGES (light)
+   ========================================================= */
+.badge-pending    { @apply bg-amber-50 text-amber-700 border border-amber-200; }
+.badge-accepted   { @apply bg-blue-50 text-blue-700 border border-blue-200; }
+.badge-picked     { @apply bg-purple-50 text-purple-700 border border-purple-200; }
+.badge-in_transit { @apply bg-orange-50 text-orange-700 border border-orange-200; }
+.badge-delivered  { @apply bg-green-50 text-green-700 border border-green-200; }
+.badge-active     { @apply bg-emerald-50 text-emerald-700 border border-emerald-200; }
+.badge-fulfilled  { @apply bg-slate-50 text-slate-600 border border-slate-200; }
+
+/* =========================================================
+   LIVE PULSE ANIMATION
+   ========================================================= */
 @keyframes livePulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.6; transform: scale(1.08); }
 }
 .live-pulse { animation: livePulse 2s ease-in-out infinite; }
 
-/* Status badge colors */
-.badge-pending   { @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30; }
-.badge-accepted  { @apply bg-blue-500/20 text-blue-400 border border-blue-500/30; }
-.badge-picked    { @apply bg-purple-500/20 text-purple-400 border border-purple-500/30; }
-.badge-in_transit { @apply bg-orange-500/20 text-orange-400 border border-orange-500/30; }
-.badge-delivered { @apply bg-green-500/20 text-green-400 border border-green-500/30; }
-.badge-active    { @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30; }
-.badge-fulfilled { @apply bg-slate-500/20 text-slate-400 border border-slate-500/30; }
+/* =========================================================
+   FADE IN UP ANIMATION
+   ========================================================= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animation-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animation-delay-300 { animation-delay: 0.3s; opacity: 0; }
+.animation-delay-400 { animation-delay: 0.4s; opacity: 0; }
+
+/* =========================================================
+   HERO GRADIENT OVERLAY
+   ========================================================= */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.40) 0%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.70) 100%
+  );
+}
+
+/* =========================================================
+   SECTION DIVIDER
+   ========================================================= */
+.divider-green {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #22C55E, transparent);
+  border: none;
+}

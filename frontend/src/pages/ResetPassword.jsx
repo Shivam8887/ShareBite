@@ -61,40 +61,40 @@ export default function ResetPassword() {
     <div className="min-h-screen pt-24 pb-12 flex items-center justify-center px-4">
       {/* Background decoration */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-50 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-50 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl gradient-text mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">ShareBite</h1>
-          <p className="text-sm text-gray-700 dark:text-dark-300 leading-relaxed">Connecting food donors with those in need</p>
+          <h1 className="text-4xl gradient-text mb-2 text-gray-900 font-bold tracking-tight">ShareBite</h1>
+          <p className="text-sm text-gray-700 leading-relaxed">Connecting food donors with those in need</p>
         </div>
 
         {/* Form Card */}
-        <div className="glass rounded-2xl p-8">
-          <h2 className="text-xl mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Set new password</h2>
-          <p className="text-sm mb-6 text-gray-700 dark:text-dark-300 leading-relaxed">
+        <div className="bg-white rounded-3xl border border-slate-100 shadow-card p-8">
+          <h2 className="text-xl mb-2 text-gray-900 font-bold tracking-tight">Set new password</h2>
+          <p className="text-sm mb-6 text-gray-700 leading-relaxed">
             Choose a strong password for your account.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1.5">New Password</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">New Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 pr-12 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
+                  className="w-full px-4 py-3 pr-12 bg-gray-50 border border-gray-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500/50"
                   placeholder="••••••••"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-dark-500 hover:text-dark-300 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
                 >
                   {showPassword ? (
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -111,7 +111,7 @@ export default function ResetPassword() {
               {/* Strength indicator */}
               {password && (
                 <div className="mt-2">
-                  <div className="h-1.5 w-full bg-dark-700 rounded-full overflow-hidden">
+                  <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
                     <div
                       className={`h-full ${strength.color} rounded-full transition-all duration-300`}
                       style={{ width: strength.width }}
@@ -125,24 +125,24 @@ export default function ResetPassword() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1.5">Confirm Password</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Confirm Password</label>
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/50"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500/50"
                 placeholder="••••••••"
                 required
               />
               {confirmPassword && password !== confirmPassword && (
-                <p className="text-xs text-red-400 mt-1 text-gray-700 dark:text-dark-300 leading-relaxed">Passwords do not match</p>
+                <p className="text-xs text-red-400 mt-1 text-gray-700 leading-relaxed">Passwords do not match</p>
               )}
             </div>
 
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-semibold rounded-xl shadow-lg shadow-primary-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              className="w-full py-3 bg-gradient-to-r bg-green-500 hover:bg-green-600 from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-semibold rounded-xl shadow-lg shadow-green disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               {submitting ? (
                 <span className="flex items-center justify-center gap-2">
@@ -153,8 +153,8 @@ export default function ResetPassword() {
             </button>
           </form>
 
-          <p className="text-center text-sm mt-6 text-gray-700 dark:text-dark-300 leading-relaxed">
-            <Link to="/login" className="text-primary-400 hover:text-primary-300 font-medium">Back to Login</Link>
+          <p className="text-center text-sm mt-6 text-gray-700 leading-relaxed">
+            <Link to="/login" className="text-green-600 hover:text-green-500 font-medium">Back to Login</Link>
           </p>
         </div>
       </div>

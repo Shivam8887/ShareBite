@@ -44,26 +44,26 @@ export default function HowItWorks() {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-20 font-sans selection:bg-primary-500/30">
+    <div className="min-h-screen pt-24 pb-20 font-sans selection:bg-green-500/30">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
         <div className="text-center mb-16 md:mb-24 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary-500/10 blur-[100px] rounded-full -z-10"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-green-50 blur-[100px] rounded-full -z-10"></div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-extrabold text-white mb-6"
           >
-            How <span className="text-primary-400">ShareBite</span> Works
+            How <span className="text-green-600">ShareBite</span> Works
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-gray-700 dark:text-dark-300 max-w-2xl mx-auto"
+            className="text-lg text-gray-700 max-w-2xl mx-auto"
           >
             We've streamlined the donation process to make sharing surplus food as easy as ordering a meal online.
           </motion.p>
@@ -83,7 +83,7 @@ export default function HowItWorks() {
 
               {/* IMAGE SECTION */}
               <div className="flex-1 w-full">
-                <div className="relative rounded-3xl overflow-hidden border border-gray-200 dark:border-dark-700/50 group">
+                <div className="relative rounded-3xl overflow-hidden border border-gray-200 group">
 
                   {/* Image */}
                   <img
@@ -96,7 +96,7 @@ export default function HowItWorks() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-dark-900/70 via-transparent to-transparent"></div>
 
                   {/* Step Number */}
-                  <div className="absolute top-4 left-4 bg-primary-500 text-dark-900 font-bold px-4 py-2 rounded-lg shadow-lg">
+                  <div className="absolute top-4 left-4 bg-green-500 text-slate-600 font-bold px-4 py-2 rounded-lg shadow-lg">
                     0{i + 1}
                   </div>
 
@@ -105,16 +105,16 @@ export default function HowItWorks() {
 
               {/* TEXT SECTION */}
               <div className="flex-1 space-y-6">
-                <h2 className="text-3xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">{step.title}</h2>
+                <h2 className="text-3xl text-gray-900 font-bold tracking-tight">{step.title}</h2>
 
-                <p className="text-lg text-gray-700 dark:text-dark-300 leading-relaxed">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   {step.desc}
                 </p>
 
                 <ul className="space-y-3 pt-2">
                   {step.points.map((point, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-dark-200">
-                      <CheckCircle2 className="w-5 h-5 text-primary-400" />
+                    <li key={idx} className="flex items-center gap-3 text-slate-700">
+                      <CheckCircle2 className="w-5 h-5 text-green-600" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -129,30 +129,30 @@ export default function HowItWorks() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="mt-32 max-w-4xl mx-auto glass p-10 md:p-16 rounded-3xl border border-primary-500/20 text-center relative overflow-hidden"
+          className="mt-32 max-w-4xl mx-auto glass p-10 md:p-16 rounded-3xl border border-green-500/20 text-center relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-transparent"></div>
 
           <div className="relative z-10">
-            <HeartPulse className="w-12 h-12 text-primary-400 mx-auto mb-6" />
+            <HeartPulse className="w-12 h-12 text-green-600 mx-auto mb-6" />
 
-            <h2 className="text-3xl md:text-4xl mb-6 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
+            <h2 className="text-3xl md:text-4xl mb-6 text-gray-900 font-bold tracking-tight">
               Start Your Journey Today
             </h2>
 
-            <p className="mb-8 max-w-xl mx-auto text-gray-700 dark:text-dark-300 leading-relaxed">
+            <p className="mb-8 max-w-xl mx-auto text-gray-700 leading-relaxed">
               Join ShareBite and help bridge the gap between surplus food and those in need.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/signup">
-                <button className="px-8 py-4 bg-primary-500 hover:bg-primary-400 text-dark-950 font-bold rounded-full transition-all hover:scale-105 shadow-lg">
+                <button className="px-8 py-4 bg-green-500 hover:bg-green-400 text-slate-600 font-bold rounded-full transition-all hover:scale-105 shadow-lg">
                   Join as Volunteer
                 </button>
               </Link>
 
               <Link to="/signup">
-                <button className="px-8 py-4 bg-white dark:bg-dark-800 hover:bg-dark-700 text-white rounded-full border border-gray-200 dark:border-dark-700">
+                <button className="px-8 py-4 bg-white hover:bg-slate-200 text-white rounded-full border border-gray-200">
                   Donate Food
                 </button>
               </Link>

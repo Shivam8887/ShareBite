@@ -1,143 +1,112 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useTheme } from '../context/ThemeContext';
-import { Menu, X, Heart, User, Sun, Moon, Palette, Leaf, Eye } from 'lucide-react';
+import { Menu, X, Heart, User, LayoutDashboard, LogOut } from 'lucide-react';
 
 export default function NavBar() {
   const { user, logout } = useAuth();
-  const { theme, setTheme } = useTheme();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isThemeDropdownOpen, setIsThemeDropdownOpen] = useState(false);
-  const themeDropdownRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (themeDropdownRef.current && !themeDropdownRef.current.contains(event.target)) {
-        setIsThemeDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const themes = [
-    { id: 'light', name: 'Light', icon: Sun },
-    { id: 'dark', name: 'Dark', icon: Moon },
-    { id: 'blue', name: 'Blue', icon: Palette },
-    { id: 'green', name: 'Green', icon: Leaf },
-    { id: 'high-contrast', name: 'High Contrast', icon: Eye },
-  ];
-  const activeTheme = themes.find(t => t.id === theme) || themes[1];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'How it Works', path: '/how-it-works' },
     { name: 'Impact', path: '/impact' },
+    { name: 'About', path: '/about' },
   ];
 
+  const isActive = (path) =>
+    path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-lg shadow-md py-3 border-b border-slate-100'
+          : 'bg-white/80 backdrop-blur-sm py-4'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="p-2 bg-primary-500/10 rounded-xl group-hover:bg-primary-500/20 transition-colors">
-            <img src="/ShareBiteicon.png" alt="ShareBite Logo" className="w-6 h-6 object-contain group-hover:scale-110 transition-transform" />
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <div className="p-2 bg-green-50 rounded-xl group-hover:bg-green-100 transition-colors">
+            <img
+              src="/ShareBiteicon.png"
+              alt="ShareBite Logo"
+              className="w-6 h-6 object-contain group-hover:scale-110 transition-transform"
+            />
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-200 bg-clip-text text-transparent">
-            ShareBite
-          </span>
+          <span className="text-xl font-bold gradient-text">ShareBite</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
+            <Link
+              key={link.name}
               to={link.path}
-              className="text-gray-700 dark:text-dark-300 hover:text-white text-sm font-medium transition-colors"
+              className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                isActive(link.path)
+                  ? 'text-green-600 bg-green-50'
+                  : 'text-slate-600 hover:text-green-600 hover:bg-green-50'
+              }`}
             >
               {link.name}
+              {isActive(link.path) && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-5 bg-green-500 rounded-full" />
+              )}
             </Link>
           ))}
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
-          {/* Theme Switcher */}
-          <div className="relative" ref={themeDropdownRef}>
-            <button 
-              onClick={() => setIsThemeDropdownOpen(!isThemeDropdownOpen)}
-              className="p-2 text-gray-700 dark:text-dark-300 hover:text-dark-100 hover:bg-dark-800/50 rounded-xl transition-all flex items-center gap-2"
-              title="Change Theme"
-            >
-              <activeTheme.icon className="w-5 h-5 text-primary-400 transform transition-transform duration-300 hover:rotate-12" />
-            </button>
-            
-            {isThemeDropdownOpen && (
-              <div className="absolute top-full right-0 mt-2 w-48 glass rounded-xl border border-gray-200 dark:border-dark-700/50 shadow-xl overflow-hidden py-1 z-50">
-                {themes.map((t) => (
-                  <button
-                    key={t.id}
-                    onClick={() => { setTheme(t.id); setIsThemeDropdownOpen(false); }}
-                    className={`w-full text-left px-4 py-2 text-sm flex items-center gap-3 transition-colors ${
-                      theme === t.id 
-                        ? 'bg-primary-500/20 text-primary-400 font-medium' 
-                        : 'text-gray-700 dark:text-dark-300 hover:bg-dark-800 hover:text-dark-100'
-                    }`}
-                  >
-                    <t.icon className="w-4 h-4" />
-                    {t.name}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
+        <div className="hidden md:flex items-center gap-3">
           {user ? (
-            <div className="flex items-center gap-4">
-              <Link 
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 text-sm text-slate-600">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-xs">
+                  {user.name?.charAt(0)?.toUpperCase()}
+                </div>
+                <span className="font-medium hidden lg:block">{user.name}</span>
+              </div>
+              <Link
                 to="/dashboard"
-                className="text-sm font-medium text-primary-400 hover:text-primary-300 transition-colors"
+                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-green-700 bg-green-50 hover:bg-green-100 rounded-lg transition-colors"
               >
-                Go to Dashboard
+                <LayoutDashboard className="w-4 h-4" />
+                Dashboard
               </Link>
               <button
                 onClick={logout}
-                className="px-4 py-2 text-sm font-medium text-white bg-white dark:bg-dark-800 hover:bg-dark-700 rounded-full border border-gray-200 dark:border-dark-700 transition-all"
+                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-600 hover:text-red-500 border border-slate-200 hover:border-red-300 rounded-lg transition-all bg-white"
               >
+                <LogOut className="w-4 h-4" />
                 Logout
               </button>
             </div>
           ) : (
             <>
-              <Link 
+              <Link
                 to="/login"
-                className="text-sm font-medium text-gray-700 dark:text-dark-300 hover:text-white transition-colors"
+                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-green-600 transition-colors"
               >
                 Log In
               </Link>
-              <Link 
+              <Link
                 to="/signup"
-                className="px-5 py-2 text-sm font-medium text-dark-900 bg-primary-400 hover:bg-primary-300 rounded-full shadow-[0_0_15px_rgba(52,211,153,0.3)] hover:shadow-[0_0_25px_rgba(52,211,153,0.5)] transition-all"
+                className="px-5 py-2.5 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 rounded-full shadow-green hover:shadow-green-lg transition-all hover:-translate-y-0.5"
               >
                 Get Started
               </Link>
@@ -146,88 +115,73 @@ export default function NavBar() {
         </div>
 
         {/* Mobile menu button */}
-        <button 
-          className="md:hidden p-2 text-gray-700 dark:text-dark-300 hover:text-white"
+        <button
+          className="md:hidden p-2 text-slate-600 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-gray-200 dark:border-dark-700/50 py-4 px-6 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-lg py-4 px-4 flex flex-col gap-1">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
+            <Link
+              key={link.name}
               to={link.path}
-              className="text-gray-700 dark:text-dark-300 hover:text-white text-lg font-medium transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                isActive(link.path)
+                  ? 'bg-green-50 text-green-600'
+                  : 'text-slate-600 hover:bg-slate-50 hover:text-green-600'
+              }`}
             >
               {link.name}
             </Link>
           ))}
-          <div className="h-px bg-dark-700/50 w-full my-2"></div>
-          
-          {/* Theme Options for Mobile */}
-          <div className="py-2">
-            <span className="text-sm text-gray-500 dark:text-dark-400 font-medium px-2 uppercase tracking-wider">Theme</span>
-            <div className="flex flex-wrap gap-2 mt-2 px-2">
-              {themes.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => { setTheme(t.id); setIsMobileMenuOpen(false); }}
-                  className={`p-2 rounded-xl border transition-all flex items-center gap-2 ${
-                    theme === t.id 
-                      ? 'bg-primary-500/20 border-primary-500/50 text-primary-400' 
-                      : 'bg-white dark:bg-dark-800/50 border-gray-200 dark:border-dark-700/50 text-gray-700 dark:text-dark-300 hover:bg-dark-800'
-                  }`}
-                  title={t.name}
-                >
-                  <t.icon className="w-5 h-5" />
-                  <span className="text-xs">{t.name}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="h-px bg-dark-700/50 w-full my-2"></div>
+
+          <div className="h-px bg-slate-100 my-2" />
 
           {user ? (
-            <>
-              <Link 
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-3 px-4 py-3">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-sm">
+                  {user.name?.charAt(0)?.toUpperCase()}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-800">{user.name}</p>
+                  <p className="text-xs text-slate-500 capitalize">{user.role}</p>
+                </div>
+              </div>
+              <Link
                 to="/dashboard"
-                className="text-primary-400 font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-green-600 bg-green-50 rounded-xl"
               >
-                Dashboard
+                <LayoutDashboard className="w-4 h-4" /> Dashboard
               </Link>
               <button
-                onClick={() => {
-                  logout();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="text-left text-gray-700 dark:text-dark-300 font-medium py-2"
+                onClick={logout}
+                className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-red-500 hover:bg-red-50 rounded-xl text-left transition-colors"
               >
-                Logout
+                <LogOut className="w-4 h-4" /> Logout
               </button>
-            </>
+            </div>
           ) : (
-            <>
-              <Link 
+            <div className="flex flex-col gap-3 pt-2">
+              <Link
                 to="/login"
-                className="text-gray-700 dark:text-dark-300 font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl transition-colors text-center"
               >
                 Log In
               </Link>
-              <Link 
+              <Link
                 to="/signup"
-                className="text-center mt-2 px-5 py-3 text-base font-medium text-dark-900 bg-primary-400 rounded-full"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-3 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 rounded-xl text-center transition-colors"
               >
-                Get Started
+                Get Started — It's Free
               </Link>
-            </>
+            </div>
           )}
         </div>
       )}

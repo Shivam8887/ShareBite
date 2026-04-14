@@ -190,7 +190,7 @@ const FAQ = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-dark-50 tracking-tight"
+            className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight"
           >
             Frequently Asked Questions
           </motion.h1>
@@ -198,7 +198,7 @@ const FAQ = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 dark:text-dark-300 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
             Find answers to common questions about ShareBite and how to get the most out of our platform.
           </motion.p>
@@ -215,7 +215,7 @@ const FAQ = () => {
               transition={{ delay: sectionIndex * 0.1 }}
               className="space-y-4"
             >
-              <h2 className="text-2xl px-2 border-b border-gray-300 dark:border-dark-700/50 pb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">
+              <h2 className="text-2xl px-2 border-b border-gray-300 pb-3 text-gray-900 font-bold tracking-tight">
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -225,18 +225,18 @@ const FAQ = () => {
                   return (
                     <div 
                       key={itemIndex} 
-                      className={`glass rounded-2xl border transition-all duration-300 overflow-hidden ${
-                        isOpen ? 'border-primary-500/50 bg-gray-50 dark:bg-dark-800/80 shadow-[0_0_15px_rgba(34,197,94,0.1)]' : 'border-gray-200 dark:border-dark-700/50 hover:border-gray-300 dark:hover:border-dark-600'
+                        className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden shadow-soft ${
+                        isOpen ? 'border-green-400 bg-green-50/50 shadow-md' : 'border-slate-200 hover:border-slate-300'
                       }`}
                     >
                       <button
                         onClick={() => toggleAccordion(index)}
                         className="w-full px-6 py-5 text-left flex items-center justify-between outline-none"
                       >
-                        <h3 className={`font-semibold text-lg transition-colors ${isOpen ? 'text-primary-600 dark:text-primary-300' : 'text-black dark:text-white'}`}>
+                        <h3 className={`font-semibold text-lg transition-colors ${isOpen ? 'text-green-600500' : 'text-black'}`}>
                           {item.q}
                         </h3>
-                        <div className={`ml-4 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary-600 dark:text-primary-400' : 'text-gray-500 dark:text-dark-400'}`}>
+                        <div className={`ml-4 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-green-600600' : 'text-gray-500'}`}>
                           <ChevronDown className="w-5 h-5" />
                         </div>
                       </button>
@@ -250,7 +250,7 @@ const FAQ = () => {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                           >
                             <div className="px-6 pb-5 pt-0">
-                              <p className="text-base border-t border-gray-200 dark:border-dark-700/50 pt-4 text-gray-700 dark:text-dark-300 leading-relaxed">
+                              <p className="text-base border-t border-gray-200 pt-4 text-gray-700 leading-relaxed">
                                 {item.a}
                               </p>
                             </div>
@@ -270,22 +270,22 @@ const FAQ = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 glass rounded-3xl p-8 border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8"
+          className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-soft relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 bg-gradient-to-br from-green-50 to-blue-50"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-transparent"></div>
           <div className="relative z-10 space-y-2">
-            <h2 className="text-2xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">Didn't find your answer?</h2>
-            <p className="text-lg text-gray-600 dark:text-dark-300 leading-relaxed">
+            <h2 className="text-2xl text-gray-900 font-bold tracking-tight">Didn't find your answer?</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
               Our support team is here to help! Reach out to us with any questions.
             </p>
           </div>
           <div className="relative z-10 flex flex-col gap-3 shrink-0 w-full md:w-auto">
-            <a href="mailto:support@sharebite.com" className="flex items-center gap-3 px-6 py-3 bg-gray-50 hover:bg-gray-100 dark:bg-dark-800 dark:hover:bg-dark-700 border border-gray-200 dark:border-dark-700 rounded-xl transition-colors text-gray-900 dark:text-white">
-              <Mail className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+            <a href="mailto:support@sharebite.com" className="flex items-center gap-3 px-6 py-3 bg-gray-50 hover:bg-gray-100:bg-slate-200 border border-gray-200 rounded-xl transition-colors text-gray-900">
+              <Mail className="w-5 h-5 text-green-600600" />
               <span className="font-medium">support@sharebite.com</span>
             </a>
-            <div className="flex items-center gap-3 px-6 py-3 bg-gray-50 dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-xl text-gray-900 dark:text-white">
-              <Phone className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+            <div className="flex items-center gap-3 px-6 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900">
+              <Phone className="w-5 h-5 text-green-600600" />
               <span className="font-medium">(555) 123-4567</span>
             </div>
           </div>

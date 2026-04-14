@@ -22,9 +22,19 @@ createRoot(document.getElementById('root')).render(
                 toastOptions={{
                   duration: 3000,
                   style: {
-                    background: 'rgb(var(--color-dark-800))',
-                    color: 'rgb(var(--color-dark-100))',
-                    border: '1px solid rgb(var(--color-glass-border) / 0.15)',
+                    background: '#FFFFFF',
+                    color: '#0F172A',
+                    border: '1px solid #E2E8F0',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                    borderRadius: '12px',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '14px',
+                  },
+                  success: {
+                    iconTheme: { primary: '#22C55E', secondary: '#fff' },
+                  },
+                  error: {
+                    iconTheme: { primary: '#EF4444', secondary: '#fff' },
                   },
                 }}
               />

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 export default function Impact() {
   const stats = [
-    { label: "Meals Saved", value: "100+", icon: <UtensilsCrossed className="w-8 h-8 text-primary-400" /> },
-    { label: "Active NGOs", value: "10+", icon: <Users className="w-8 h-8 text-accent-400" /> },
-    { label: "Volunteers", value: "10+", icon: <HandHeart className="w-8 h-8 text-primary-600" /> },
-    { label: "Cities Reached", value: "2+", icon: <Globe className="w-8 h-8 text-gray-800 dark:text-white" /> }
+    { label: "Meals Saved", value: "100+", icon: <UtensilsCrossed className="w-8 h-8 text-green-600" /> },
+    { label: "Active NGOs", value: "10+", icon: <Users className="w-8 h-8 text-amber-500" /> },
+    { label: "Volunteers", value: "10+", icon: <HandHeart className="w-8 h-8 text-green-600" /> },
+    { label: "Cities Reached", value: "2+", icon: <Globe className="w-8 h-8 text-gray-800" /> }
   ];
 
   const milestones = [
@@ -18,16 +18,16 @@ export default function Impact() {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-20 font-sans selection:bg-primary-500/30">
+    <div className="min-h-screen pt-24 pb-20 font-sans selection:bg-green-500/30">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent-500/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-amber-50 blur-[100px] rounded-full pointer-events-none -z-10"></div>
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 dark:bg-dark-800/50 border border-gray-200 dark:border-dark-700 text-accent-600 dark:text-accent-400 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-gray-200 text-accent-600500 text-sm font-medium mb-6"
           >
             <Award className="w-4 h-4" />
             Our Impact So Far
@@ -36,7 +36,7 @@ export default function Impact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-50 mb-6"
+            className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6"
           >
             Making a <span className="bg-gradient-to-r from-accent-400 to-accent-200 bg-clip-text text-transparent ">Real Difference</span>
           </motion.h1>
@@ -44,7 +44,7 @@ export default function Impact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 dark:text-dark-300 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
             At ShareBite, every meal saved is a step toward ending global hunger and reducing food waste. Discover the numbers that drive our passion.
           </motion.p>
@@ -59,21 +59,21 @@ export default function Impact() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               key={i}
-              className="glass p-8 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent relative overflow-hidden group hover:border-gray-300 dark:hover:border-dark-600 transition-colors"
+              className="bg-white rounded-3xl border border-slate-200 shadow-soft p-8 relative overflow-hidden group hover:border-green-300 card-hover transition-all"
             >
-              <div className="absolute -right-4 -top-4 w-24 h-24 bg-gray-100 dark:bg-dark-800/50 rounded-full blur-2xl group-hover:bg-primary-500/10 transition-colors"></div>
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-gray-100 rounded-full blur-2xl group-hover:bg-green-50 transition-colors"></div>
               <div className="mb-6">{stat.icon}</div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-dark-50 mb-2">{stat.value}</div>
-              <div className="text-sm text-gray-500 dark:text-dark-400 font-medium tracking-wide uppercase">{stat.label}</div>
+              <div className="text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+              <div className="text-sm text-gray-500 font-medium tracking-wide uppercase">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* Timeline Section */}
-        <div className="max-w-4xl mx-auto glass p-10 md:p-16 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent mb-24">
+        <div className="max-w-4xl mx-auto bg-white p-10 md:p-16 rounded-3xl border border-slate-200 shadow-soft mb-24">
           <div className="flex items-center gap-4 mb-12">
-            <TrendingUp className="w-8 h-8 text-primary-400" />
-            <h2 className="text-3xl text-gray-900 dark:text-dark-50 font-bold tracking-tight">Our Journey</h2>
+            <TrendingUp className="w-8 h-8 text-green-600" />
+            <h2 className="text-3xl text-gray-900 font-bold tracking-tight">Our Journey</h2>
           </div>
           
           <div className="space-y-12">
@@ -87,18 +87,18 @@ export default function Impact() {
                 className="relative pl-8 md:pl-0"
               >
                 {/* Desktop layout line */}
-                <div className="hidden md:block absolute left-[120px] top-0 bottom-[-48px] w-px bg-gray-300 dark:bg-dark-700 last:hidden"></div>
+                <div className="hidden md:block absolute left-[120px] top-0 bottom-[-48px] w-px bg-gray-300 last:hidden"></div>
                 
                 <div className="flex flex-col md:flex-row gap-4 md:gap-12 relative">
                   {/* Timeline dot */}
-                  <div className="absolute left-[-32px] md:left-[116px] top-2 w-2 h-2 rounded-full bg-primary-400 ring-4 ring-white dark:ring-dark-900 border border-primary-400"></div>
+                  <div className="absolute left-[-32px] md:left-[116px] top-2 w-2 h-2 rounded-full bg-green-400 ring-4 ring-white900 border border-primary-400"></div>
                   
-                  <div className="md:w-[100px] text-primary-600 dark:text-primary-400 font-bold text-xl pt-1">
+                  <div className="md:w-[100px] text-green-600600 font-bold text-xl pt-1">
                     {milestone.year}
                   </div>
-                  <div className="flex-1 pb-12 md:pb-0 border-b md:border-b-0 border-gray-200 dark:border-dark-800 last:border-0">
-                    <h3 className="text-2xl mb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">{milestone.title}</h3>
-                    <p className="text-gray-600 dark:text-dark-300 leading-relaxed">{milestone.desc}</p>
+                  <div className="flex-1 pb-12 md:pb-0 border-b md:border-b-0 border-gray-200 last:border-0">
+                    <h3 className="text-2xl mb-3 text-gray-900 font-bold tracking-tight">{milestone.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{milestone.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -111,14 +111,14 @@ export default function Impact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center bg-gray-50 dark:bg-dark-800/50 p-12 rounded-3xl border border-gray-200 dark:border-dark-700/50"
+          className="text-center bg-gray-50 p-12 rounded-3xl border border-gray-200"
         >
-          <h2 className="text-3xl mb-6 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Be Part of Our Story</h2>
-          <p className="mb-8 max-w-xl mx-auto text-gray-600 dark:text-dark-300 leading-relaxed">
+          <h2 className="text-3xl mb-6 text-gray-900 font-bold tracking-tight">Be Part of Our Story</h2>
+          <p className="mb-8 max-w-xl mx-auto text-gray-600 leading-relaxed">
             The simplest actions can have the biggest impact. Sign up as a donor or a volunteer and start making a difference today.
           </p>
           <Link to="/signup">
-            <button className="px-8 py-4 bg-primary-500 hover:bg-primary-400 text-dark-950 font-bold rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+            <button className="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full transition-all hover:scale-105 active:scale-95 shadow-green hover:shadow-green-lg">
               Get Involved Now
             </button>
           </Link>
