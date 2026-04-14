@@ -35,15 +35,15 @@ export default function RequestCard({
 
   return (
     <div
-      className={`relative rounded-xl border transition-all duration-300 hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 ${
+      className={`relative rounded-xl border transition-all duration-300 hover:border-green-500/50 hover:shadow-lg hover:shadow-primary-500/5 ${
         isRecommended
-          ? 'border-primary-500/40 bg-gradient-to-br from-primary-500/5 to-primary-600/10 ring-1 ring-primary-500/20'
-          : 'border-gray-200 dark:border-dark-700/30 bg-white dark:bg-dark-800/30'
+          ? 'border-green-500/40 bg-gradient-to-br from-primary-500/5 to-primary-600/10 ring-1 ring-green-500/20'
+          : 'border-gray-200 bg-white'
       }`}
     >
       {/* Recommended Badge */}
       {isRecommended && (
-        <div className="absolute -top-2.5 left-4 flex items-center gap-1 bg-gradient-to-r from-primary-600 to-primary-500 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-primary-500/30">
+        <div className="absolute -top-2.5 left-4 flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-primary-500/30">
           <Star size={10} fill="currentColor" />
           Recommended
         </div>
@@ -53,8 +53,8 @@ export default function RequestCard({
         {/* Header Row */}
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1 min-w-0">
-            <h4 className="text-sm truncate text-gray-900 dark:text-dark-50 font-bold tracking-tight">{donation.title}</h4>
-            <p className="text-xs mt-0.5 text-gray-700 dark:text-dark-300 leading-relaxed">
+            <h4 className="text-sm truncate text-gray-900 font-bold tracking-tight">{donation.title}</h4>
+            <p className="text-xs mt-0.5 text-gray-700 leading-relaxed">
               Qty: {donation.quantity} • {timeAgo(donation.createdAt)}
             </p>
           </div>
@@ -72,12 +72,12 @@ export default function RequestCard({
               <MapPin size={11} className="text-green-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-[10px] uppercase tracking-wide font-medium text-gray-700 dark:text-dark-300 leading-relaxed">Pickup</p>
-              <p className="text-xs truncate text-gray-700 dark:text-dark-300 leading-relaxed">
+              <p className="text-[10px] uppercase tracking-wide font-medium text-gray-700 leading-relaxed">Pickup</p>
+              <p className="text-xs truncate text-gray-700 leading-relaxed">
                 {donation.donor?.name || donation.donorId?.name || 'Donor'}
                 {donation.pickupLocation?.address ? ` — ${donation.pickupLocation.address}` : ''}
               </p>
-              <p className="text-[10px] text-primary-400 font-medium text-gray-700 dark:text-dark-300 leading-relaxed">{pickupDistance} km away</p>
+              <p className="text-[10px] text-green-600 font-medium text-gray-700 leading-relaxed">{pickupDistance} km away</p>
             </div>
           </div>
 
@@ -88,30 +88,30 @@ export default function RequestCard({
                 <Navigation size={11} className="text-red-400" />
               </div>
               <div className="min-w-0">
-                <p className="text-[10px] uppercase tracking-wide font-medium text-gray-700 dark:text-dark-300 leading-relaxed">Deliver to</p>
-                <p className="text-xs truncate text-gray-700 dark:text-dark-300 leading-relaxed">
+                <p className="text-[10px] uppercase tracking-wide font-medium text-gray-700 leading-relaxed">Deliver to</p>
+                <p className="text-xs truncate text-gray-700 leading-relaxed">
                   {matchedRequest.ngo?.name || matchedRequest.ngoId?.name || 'NGO'}
                   {matchedRequest.foodNeeded ? ` — needs "${matchedRequest.foodNeeded}"` : ''}
                 </p>
-                <p className="text-[10px] text-primary-400 font-medium text-gray-700 dark:text-dark-300 leading-relaxed">{deliveryDistance} km from pickup</p>
+                <p className="text-[10px] text-green-600 font-medium text-gray-700 leading-relaxed">{deliveryDistance} km from pickup</p>
               </div>
             </div>
           )}
         </div>
 
         {/* Stats Row */}
-        <div className="flex items-center gap-3 bg-white dark:bg-dark-800/50 rounded-lg px-3 py-2 mb-3">
-          <div className="flex items-center gap-1 text-[11px] text-gray-700 dark:text-dark-300">
-            <MapPin size={11} className="text-primary-400" />
+        <div className="flex items-center gap-3 bg-white rounded-lg px-3 py-2 mb-3">
+          <div className="flex items-center gap-1 text-[11px] text-gray-700">
+            <MapPin size={11} className="text-green-600" />
             <span>{totalDistance} km total</span>
           </div>
-          <div className="w-px h-3 bg-dark-700"></div>
-          <div className="flex items-center gap-1 text-[11px] text-gray-700 dark:text-dark-300">
-            <Clock size={11} className="text-primary-400" />
+          <div className="w-px h-3 bg-slate-200"></div>
+          <div className="flex items-center gap-1 text-[11px] text-gray-700">
+            <Clock size={11} className="text-green-600" />
             <span>~{estimatedTime} min</span>
           </div>
-          <div className="w-px h-3 bg-dark-700"></div>
-          <div className="flex items-center gap-1 text-[11px] text-gray-700 dark:text-dark-300">
+          <div className="w-px h-3 bg-slate-200"></div>
+          <div className="flex items-center gap-1 text-[11px] text-gray-700">
             <AlertTriangle size={11} className="text-orange-400" />
             <span>{expiresIn(donation.expiryTime)}</span>
           </div>
@@ -124,8 +124,8 @@ export default function RequestCard({
             disabled={accepting}
             className={`flex-1 py-2.5 text-sm font-semibold rounded-xl transition-all disabled:opacity-50 ${
               isRecommended
-                ? 'bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white shadow-lg shadow-primary-500/20'
-                : 'bg-primary-600/20 hover:bg-primary-600/30 text-primary-400 border border-primary-500/20'
+                ? 'bg-gradient-to-r bg-green-500 hover:bg-green-600 from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white shadow-lg shadow-green'
+                : 'bg-primary-600/20 hover:bg-primary-600/30 text-green-600 border border-green-500/20'
             }`}
           >
             {accepting ? 'Accepting...' : '✅ Accept Request'}
@@ -133,7 +133,7 @@ export default function RequestCard({
           {onShowRoute && (
             <button
               onClick={() => onShowRoute(item)}
-              className="px-3 py-2.5 text-sm font-medium rounded-xl bg-dark-700/50 hover:bg-dark-700 text-gray-700 dark:text-dark-300 hover:text-dark-100 border border-dark-600/30 transition-all"
+              className="px-3 py-2.5 text-sm font-medium rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-800 border border-slate-200 hover:border-slate-300 transition-all"
               title="Preview route on map"
             >
               🗺️

@@ -75,16 +75,16 @@ export default function NgoDashboard() {
           <div key={s.label} className={`bg-gradient-to-br ${s.color} border rounded-xl p-4 flex items-center gap-4`}>
             <span className="text-3xl">{s.icon}</span>
             <div>
-              <p className="text-2xl font-bold text-gray-700 dark:text-dark-300 leading-relaxed">{s.value}</p>
-              <p className="text-sm text-gray-700 dark:text-dark-300 leading-relaxed">{s.label}</p>
+              <p className="text-2xl font-bold text-gray-700 leading-relaxed">{s.value}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">{s.label}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Map with nearby donations + requests */}
-      <div className="glass rounded-xl p-4">
-        <h3 className="text-lg mb-3 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Nearby Donations & My Requests</h3>
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-soft p-4">
+        <h3 className="text-lg mb-3 text-gray-900 font-bold tracking-tight">Nearby Donations & My Requests</h3>
         <MapView
           center={position}
           donations={nearbyDonations}
@@ -95,17 +95,17 @@ export default function NgoDashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Create Request / My Requests */}
-        <div className="glass rounded-xl p-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-soft p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg text-gray-900 dark:text-dark-50 font-bold tracking-tight">
+            <h3 className="text-lg text-gray-900 font-bold tracking-tight">
               {showForm ? 'Create Food Request' : 'My Requests'}
             </h3>
             <button
               onClick={() => setShowForm(!showForm)}
               className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                 showForm
-                  ? 'bg-white dark:bg-dark-800 text-gray-700 dark:text-dark-300'
-                  : 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg shadow-primary-500/20'
+                  ? 'bg-white text-gray-700'
+                  : 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green'
               }`}
             >
               {showForm ? '← Back' : '+ New Request'}
@@ -115,22 +115,22 @@ export default function NgoDashboard() {
           {showForm ? (
             <form onSubmit={handleCreate} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1">Food Needed</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Food Needed</label>
                 <input
                   type="text"
                   value={form.foodNeeded}
                   onChange={(e) => setForm({ ...form, foodNeeded: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-500"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:border-green-500"
                   placeholder="e.g., Rice and Dal for 100 people"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-dark-300 mb-1">Urgency</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Urgency</label>
                 <select
                   value={form.urgency}
                   onChange={(e) => setForm({ ...form, urgency: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900/50 border border-gray-200 dark:border-dark-700 rounded-xl text-dark-100 focus:outline-none focus:border-primary-500"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-slate-800 focus:outline-none focus:border-green-500"
                 >
                   <option value="low">Low</option>
                   <option value="medium">Medium</option>
@@ -140,7 +140,7 @@ export default function NgoDashboard() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold rounded-xl disabled:opacity-50"
+                className="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl disabled:opacity-50"
               >
                 {submitting ? 'Creating...' : 'Create Request'}
               </button>
@@ -150,16 +150,16 @@ export default function NgoDashboard() {
               <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary-400"></div>
             </div>
           ) : myRequests.length === 0 ? (
-            <p className="text-center py-8 text-gray-700 dark:text-dark-300 leading-relaxed">No requests yet</p>
+            <p className="text-center py-8 text-gray-700 leading-relaxed">No requests yet</p>
           ) : (
             <div className="space-y-3 max-h-80 overflow-y-auto">
               {myRequests.map((r) => (
-                <div key={r._id} className="bg-white dark:bg-dark-800/30 rounded-lg p-3 border border-gray-200 dark:border-dark-700/30">
+                <div key={r._id} className="bg-white rounded-lg p-3 border border-gray-200">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-medium text-gray-700 dark:text-dark-300 leading-relaxed">{r.foodNeeded}</p>
+                    <p className="text-sm font-medium text-gray-700 leading-relaxed">{r.foodNeeded}</p>
                     <StatusBadge status={r.status} />
                   </div>
-                  <div className="flex items-center gap-3 mt-2 text-xs text-gray-500 dark:text-dark-400">
+                  <div className="flex items-center gap-3 mt-2 text-xs text-gray-500">
                     <span className={`px-1.5 py-0.5 rounded ${r.urgency === 'high' ? 'bg-red-500/20 text-red-400' : r.urgency === 'medium' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-blue-500/20 text-blue-400'}`}>
                       {r.urgency}
                     </span>
@@ -172,25 +172,25 @@ export default function NgoDashboard() {
         </div>
 
         {/* Nearby Donations */}
-        <div className="glass rounded-xl p-6">
-          <h3 className="text-lg mb-4 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Nearby Available Donations</h3>
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-soft p-6">
+          <h3 className="text-lg mb-4 text-gray-900 font-bold tracking-tight">Nearby Available Donations</h3>
           {nearbyDonations.length === 0 ? (
-            <p className="text-center py-8 text-gray-700 dark:text-dark-300 leading-relaxed">No nearby donations found</p>
+            <p className="text-center py-8 text-gray-700 leading-relaxed">No nearby donations found</p>
           ) : (
             <div className="space-y-3 max-h-96 overflow-y-auto">
               {nearbyDonations.map((d) => (
-                <div key={d._id} className="bg-white dark:bg-dark-800/30 rounded-lg p-4 border border-gray-200 dark:border-dark-700/30">
+                <div key={d._id} className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-sm font-semibold text-gray-700 dark:text-dark-300 leading-relaxed">{d.title}</p>
+                    <p className="text-sm font-semibold text-gray-700 leading-relaxed">{d.title}</p>
                     <StatusBadge status={d.status} />
                   </div>
-                  {d.description && <p className="text-xs mb-2 text-gray-700 dark:text-dark-300 leading-relaxed">{d.description}</p>}
-                  <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-dark-400">
+                  {d.description && <p className="text-xs mb-2 text-gray-700 leading-relaxed">{d.description}</p>}
+                  <div className="flex items-center gap-3 text-xs text-gray-500">
                     <span>Qty: {d.quantity}</span>
                     <span>Expires: {new Date(d.expiryTime).toLocaleString()}</span>
                   </div>
                   {d.donorId && (
-                    <p className="text-xs mt-1 text-gray-700 dark:text-dark-300 leading-relaxed">Donor: {d.donorId.name} {d.donorId.phone && `• ${d.donorId.phone}`}</p>
+                    <p className="text-xs mt-1 text-gray-700 leading-relaxed">Donor: {d.donorId.name} {d.donorId.phone && `• ${d.donorId.phone}`}</p>
                   )}
                 </div>
               ))}

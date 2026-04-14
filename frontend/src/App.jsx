@@ -29,8 +29,11 @@ const RequestsPage = React.lazy(() => import('./pages/RequestsPage'));
 
 // Global Loading Fallback Indicator
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-dark-900">
-    <div className="w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
+  <div className="min-h-screen flex items-center justify-center bg-slate-50">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-12 h-12 border-4 border-green-500 border-t-transparent rounded-full animate-spin" />
+      <p className="text-sm text-slate-400 font-medium">Loading ShareBite...</p>
+    </div>
   </div>
 );
 

@@ -42,14 +42,14 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 relative font-sans">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-50 blur-[120px] rounded-full pointer-events-none -z-10"></div>
       
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-dark-50 tracking-tight"
+            className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight"
           >
             Get in Touch
           </motion.h1>
@@ -57,7 +57,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-gray-600 dark:text-dark-300 text-lg max-w-2xl mx-auto"
+            className="text-gray-600 text-lg max-w-2xl mx-auto"
           >
             Have questions about donations, volunteering, or partnering with us? We'd love to hear from you.
           </motion.p>
@@ -71,46 +71,46 @@ const Contact = () => {
             transition={{ delay: 0.2 }}
             className="lg:col-span-1 space-y-6"
           >
-            <div className="glass p-8 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent">
-              <h3 className="text-2xl mb-6 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Contact Information</h3>
+            <div className="bg-white rounded-3xl border border-slate-200 shadow-soft p-8 bg-white/50">
+              <h3 className="text-2xl mb-6 text-gray-900 font-bold tracking-tight">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-green-600600" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Our Office</h4>
-                    <p className="text-sm text-gray-600 dark:text-dark-300 leading-relaxed">123 Innovation Drive,<br/>Tech City, IN 400001</p>
+                    <h4 className="font-medium mb-1 text-gray-900 font-bold tracking-tight">Our Office</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">123 Innovation Drive,<br/>Tech City, IN 400001</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                    <Phone className="w-6 h-6 text-green-600600" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Phone</h4>
-                    <p className="text-sm text-gray-600 dark:text-dark-300 leading-relaxed">+91 (800) 123-4567<br/>Mon-Fri, 9am - 6pm</p>
+                    <h4 className="font-medium mb-1 text-gray-900 font-bold tracking-tight">Phone</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">+91 (800) 123-4567<br/>Mon-Fri, 9am - 6pm</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6 text-green-600600" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Email</h4>
-                    <p className="text-sm text-gray-600 dark:text-dark-300 leading-relaxed">support@sharebite.org<br/>hello@sharebite.org</p>
+                    <h4 className="font-medium mb-1 text-gray-900 font-bold tracking-tight">Email</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">support@sharebite.org<br/>hello@sharebite.org</p>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Social Proof/Extra info */}
-            <div className="glass p-8 rounded-3xl border border-primary-500/20 bg-primary-500/5">
-              <h3 className="text-lg mb-2 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Need immediate help?</h3>
-              <p className="text-sm mb-4 text-gray-600 dark:text-dark-300 leading-relaxed">Check out our frequently asked questions for quick answers to common issues.</p>
-              <a href="/faq" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium transition-colors">Go to FAQ &rarr;</a>
+            <div className="glass p-8 rounded-3xl border border-green-500/20 bg-green-50">
+              <h3 className="text-lg mb-2 text-gray-900 font-bold tracking-tight">Need immediate help?</h3>
+              <p className="text-sm mb-4 text-gray-600 leading-relaxed">Check out our frequently asked questions for quick answers to common issues.</p>
+              <a href="/faq" className="text-green-600 hover:text-green-700600:text-green-500 text-sm font-medium transition-colors">Go to FAQ &rarr;</a>
             </div>
           </motion.div>
 
@@ -119,12 +119,12 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="lg:col-span-2 glass p-8 md:p-10 rounded-3xl border border-gray-200 dark:border-dark-700/50 bg-white/50 dark:bg-transparent"
+            className="lg:col-span-2 glass p-8 md:p-10 rounded-3xl border border-gray-200 bg-white/50"
           >
-            <h3 className="text-2xl mb-8 text-gray-900 dark:text-dark-50 font-bold tracking-tight">Send us a Message</h3>
+            <h3 className="text-2xl mb-8 text-gray-900 font-bold tracking-tight">Send us a Message</h3>
             
             {status.msg && (
-              <div className={`p-4 rounded-xl mb-6 ${status.type === 'success' ? 'bg-primary-500/10 border border-primary-500/20 text-primary-400' : 'bg-red-500/10 border border-red-500/20 text-red-400'}`}>
+              <div className={`p-4 rounded-xl mb-6 ${status.type === 'success' ? 'bg-green-50 border border-green-500/20 text-green-600' : 'bg-red-500/10 border border-red-500/20 text-red-400'}`}>
                 {status.msg}
               </div>
             )}
@@ -132,30 +132,30 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-dark-300">Name</label>
+                  <label className="text-sm font-medium text-gray-700">Name</label>
                   <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-dark-400" />
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input 
                       type="text" 
                       name="name" 
                       value={formData.name} 
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 rounded-xl text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400:text-slate-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all"
                       placeholder="John Doe"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-dark-300">Email</label>
+                  <label className="text-sm font-medium text-gray-700">Email</label>
                   <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-dark-400" />
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input 
                       type="email" 
                       name="email" 
                       value={formData.email} 
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 rounded-xl text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400:text-slate-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -164,30 +164,30 @@ const Contact = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-dark-300">Phone</label>
+                  <label className="text-sm font-medium text-gray-700">Phone</label>
                   <div className="relative">
-                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-dark-400" />
+                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input 
                       type="tel" 
                       name="phone" 
                       value={formData.phone} 
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 rounded-xl text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400:text-slate-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all"
                       placeholder="+91 9876543210"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-dark-300">Subject</label>
+                  <label className="text-sm font-medium text-gray-700">Subject</label>
                   <div className="relative">
-                    <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-dark-400" />
+                    <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input 
                       type="text" 
                       name="subject" 
                       value={formData.subject} 
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 rounded-xl text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400:text-slate-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all"
                       placeholder="How can we help?"
                     />
                   </div>
@@ -195,13 +195,13 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 dark:text-dark-300">Message</label>
+                <label className="text-sm font-medium text-gray-700">Message</label>
                 <textarea 
                   name="message" 
                   rows="5" 
                   value={formData.message} 
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 rounded-xl text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400:text-slate-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all resize-none"
                   placeholder="Tell us what you need..."
                 ></textarea>
               </div>
@@ -209,7 +209,7 @@ const Contact = () => {
               <button 
                 type="submit" 
                 disabled={loading}
-                className="w-full sm:w-auto px-8 py-4 bg-primary-500 hover:bg-primary-400 text-dark-950 font-semibold rounded-xl transition-all shadow-[0_0_20px_rgba(34,197,94,0.2)] hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-green-500 hover:bg-green-400 text-slate-600 font-semibold rounded-xl transition-all shadow-[0_0_20px_rgba(34,197,94,0.2)] hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {loading ? 'Sending...' : 'Send Message'}
               </button>

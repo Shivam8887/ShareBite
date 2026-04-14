@@ -20,7 +20,7 @@ const LABELS = {
 
 export default function StatusBadge({ status }) {
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${STATUS_MAP[status] || 'bg-dark-700 text-gray-700 dark:text-dark-300'}`}>
+    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${STATUS_MAP[status] || 'bg-slate-200 text-gray-700'}`}>
       {LABELS[status] || status}
     </span>
   );
