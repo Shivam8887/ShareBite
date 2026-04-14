@@ -72,30 +72,33 @@ export function useGeolocation() {
     );
   }, [applyFallback]);
 
-  // Initial fetch on mount
+  // Auto live-tracking
   useEffect(() => {
     if (!navigator.geolocation) {
       applyFallback('Geolocation is not supported by your browser.');
       return;
     }
 
-    navigator.geolocation.getCurrentPosition(
+    const watchId = navigator.geolocation.watchPosition(
       (pos) => {
         const lat = pos.coords.latitude;
         const lng = pos.coords.longitude;
-        console.log('[useGeolocation] Initial position:', { lat, lng });
-        console.log(`[useGeolocation] Accuracy: ${pos.coords.accuracy}m`);
+        console.log('[useGeolocation] Live position:', { lat, lng });
         setPosition({ lat, lng });
+        setUsingFallback(false);
+        setError(null);
         setLoading(false);
       },
       (err) => {
         const message = getErrorMessage(err);
-        console.error('[useGeolocation] Initial error:', err.code, err.message);
-        applyFallback(message);
+        console.error('[useGeolocation] Watch error:', err.code, err.message);
+        if (loading) applyFallback(message);
       },
       GEOLOCATION_OPTIONS
     );
-  }, [applyFallback]);
+
+    return () => navigator.geolocation.clearWatch(watchId);
+  }, [applyFallback, loading]);
 
   return { position, error, loading, usingFallback, refetch };
 }

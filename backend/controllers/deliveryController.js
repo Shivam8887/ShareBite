@@ -80,10 +80,15 @@ exports.updateDeliveryStatus = async (req, res) => {
     await delivery.save();
 
     // Update donation status too
-    await Donation.findByIdAndUpdate(delivery.donationId, { status });
+    const updatedDonation = await Donation.findByIdAndUpdate(delivery.donationId, { status }, { new: true });
 
     const io = req.app.get('io');
-    if (io) io.to(`delivery_${deliveryId}`).emit('statusUpdate', { deliveryId, status, delivery });
+    if (io) {
+      io.to(`delivery_${deliveryId}`).emit('statusUpdate', { deliveryId, status, delivery });
+      if (updatedDonation) {
+        io.emit('donationStatusUpdate', updatedDonation);
+      }
+    }
 
     res.json({ delivery });
   } catch (err) {
